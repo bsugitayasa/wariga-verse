@@ -1,0 +1,112 @@
+{
+  "numbers": {
+    "1": {
+      "title": "Pemimpin & Pelopor",
+      "keywords": ["Kepemimpinan", "Kemandirian", "Ambisi"],
+      "description": "Angka 1 melambangkan awal, kreativitas, dan kemandirian. Orang dengan angka ini memiliki jiwa kepemimpinan alami, keberanian untuk memulai hal baru, dan determinasi yang kuat.",
+      "strengths": "Mandiri, kreatif, ambisius, pelopor",
+      "challenges": "Keras kepala, egois, dominan",
+      "element": "Api",
+      "planet": "Matahari"
+    },
+    "2": {
+      "title": "Diplomat & Penyeimbang",
+      "keywords": ["Keseimbangan", "Kerja sama", "Diplomasi"],
+      "description": "Angka 2 melambangkan dualitas, keseimbangan, dan kerja sama. Orang dengan angka ini memiliki kemampuan diplomasi yang tinggi, sensitif terhadap perasaan orang lain, dan mencari harmoni.",
+      "strengths": "Diplomatik, penyayang, kooperatif, intuitif",
+      "challenges": "Terlalu sensitif, ragu-ragu, mudah terpengaruh",
+      "element": "Air",
+      "planet": "Bulan"
+    },
+    "3": {
+      "title": "Kreator & Komunikator",
+      "keywords": ["Kreativitas", "Ekspresi", "Kegembiraan"],
+      "description": "Angka 3 melambangkan ekspresi diri, kreativitas, dan komunikasi. Orang dengan angka ini memiliki bakat artistik, kemampuan berkomunikasi yang baik, dan aura keceriaan.",
+      "strengths": "Kreatif, ekspresif, optimis, sosial",
+      "challenges": "Berlebihan, dangkal, mudah bosan",
+      "element": "Api",
+      "planet": "Jupiter"
+    },
+    "4": {
+      "title": "Pembangun & Pekerja Keras",
+      "keywords": ["Stabilitas", "Kerja keras", "Pondasi"],
+      "description": "Angka 4 melambangkan stabilitas, kerja keras, dan fondasi yang kuat. Orang dengan angka ini memiliki disiplin tinggi, keandalan, dan kemampuan membangun sesuatu dari nol.",
+      "strengths": "Disiplin, andal, praktis, pekerja keras",
+      "challenges": "Kaku, membosankan, keras kepala",
+      "element": "Tanah",
+      "planet": "Uranus"
+    },
+    "5": {
+      "title": "Petualang & Pelopor Perubahan",
+      "keywords": ["Kebebasan", "Petualangan", "Perubahan"],
+      "description": "Angka 5 melambangkan kebebasan, petualangan, dan perubahan. Orang dengan angka ini suka berpetualang, adaptif terhadap perubahan, dan memiliki rasa ingin tahu yang tinggi.",
+      "strengths": "Adaptif, petualang, versatil, energik",
+      "challenges": "Tidak konsisten, gelisah, impulsif",
+      "element": "Udara",
+      "planet": "Merkurius"
+    },
+    "6": {
+      "title": "Pengasuh & Pelindung",
+      "keywords": ["Tanggung jawab", "Kasih sayang", "Harmoni"],
+      "description": "Angka 6 melambangkan tanggung jawab, kasih sayang, dan keharmonisan rumah tangga. Orang dengan angka ini memiliki naluri mengasuh yang kuat dan selalu menjaga keluarga.",
+      "strengths": "Penyayang, bertanggung jawab, pelindung, harmonis",
+      "challenges": "Terlalu mengontrol, khawatir berlebihan, perfeksionis",
+      "element": "Tanah",
+      "planet": "Venus"
+    },
+    "7": {
+      "title": "Pencari Kebenaran & Mistikus",
+      "keywords": ["Kebijaksanaan", "Spiritualitas", "Analisis"],
+      "description": "Angka 7 melambangkan kebijaksanaan, spiritualitas, dan pencarian kebenaran. Orang dengan angka ini memiliki pikiran analitis, kecenderungan spiritual, dan kedalaman pemikiran.",
+      "strengths": "Bijaksana, analitis, spiritual, mendalam",
+      "challenges": "Menarik diri, skeptis, sulit didekati",
+      "element": "Air",
+      "planet": "Neptunus"
+    },
+    "8": {
+      "title": "Eksekutif & Pembangun Kekayaan",
+      "keywords": ["Kekuatan", "Kesuksesan", "Material"],
+      "description": "Angka 8 melambangkan kekuatan, kesuksesan material, dan kemampuan manajerial. Orang dengan angka ini memiliki kemampuan bisnis yang luar biasa dan ambisi yang tinggi.",
+      "strengths": "Ambisius, kuat, manajerial, berwibawa",
+      "challenges": "Materialistis, otoriter, workaholic",
+      "element": "Tanah",
+      "planet": "Saturnus"
+    },
+    "9": {
+      "title": "Pelayan & Pencerah",
+      "keywords": ["Kebijaksanaan universal", "Pelayanan", "Kemanusiaan"],
+      "description": "Angka 9 melambangkan kebijaksanaan universal, pelayanan, dan kemanusiaan. Orang dengan angka ini memiliki visi besar untuk kebaikan umat manusia dan jiwa yang mulia.",
+      "strengths": "Mulia, bijaksana, idealis, dermawan",
+      "challenges": "Naif, terlalu idealis, merasa superior",
+      "element": "Api",
+      "planet": "Mars"
+    },
+    "11": {
+      "title": "Master Intuisi (Master Number)",
+      "keywords": ["Intuisi tinggi", "Iluminasi", "Inspirasi"],
+      "description": "Angka Master 11 melambangkan intuisi tingkat tinggi, iluminasi spiritual, dan kemampuan untuk menginspirasi. Ini adalah angka visioner yang membawa pesan spiritual.",
+      "strengths": "Sangat intuitif, visioner, inspiratif, spiritual",
+      "challenges": "Kecemasan tinggi, terlalu sensitif, tekanan batin",
+      "element": "Cahaya",
+      "planet": "Matahari-Bulan"
+    },
+    "22": {
+      "title": "Master Pembangun (Master Number)",
+      "keywords": ["Visi besar", "Pembangunan", "Manifestasi"],
+      "description": "Angka Master 22 melambangkan kemampuan untuk mewujudkan visi besar menjadi kenyataan. Ini adalah angka pembangun tertinggi yang mampu menciptakan warisan abadi.",
+      "strengths": "Visioner praktis, pembangun, berpengaruh, manifestor",
+      "challenges": "Beban tanggung jawab besar, perfeksionis ekstrem, kelelahan",
+      "element": "Tanah-Cahaya",
+      "planet": "Saturnus-Bulan"
+    },
+    "33": {
+      "title": "Master Guru (Master Number)",
+      "keywords": ["Pengajaran", "Penyembuhan", "Kasih universal"],
+      "description": "Angka Master 33 melambangkan guru spiritual tertinggi, penyembuh, dan kasih sayang universal. Ini adalah angka pelayanan tertinggi yang mendedikasikan hidup untuk kebaikan.",
+      "strengths": "Guru alami, penyembuh, penuh kasih, pelayan",
+      "challenges": "Mengorbankan diri berlebihan, beban emosional berat",
+      "element": "Akasa",
+      "planet": "Jupiter-Venus"
+    }
+  }
+}
