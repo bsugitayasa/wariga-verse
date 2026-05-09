@@ -40,7 +40,7 @@ export default function NameRecommendation({ recommendations }) {
         <div className="form-group" style={{ minWidth: '200px' }}>
           <label className="form-label" style={{ marginBottom: '0.5rem', display: 'block', fontSize: '0.8rem', opacity: 0.8 }}>Filter Asal Nama</label>
           <select className="form-input" value={originFilter} onChange={e => setOriginFilter(e.target.value)} style={{ width: '100%' }}>
-            {origins.map(o => <option key={o} value={o}>{o === 'all' ? 'Semua Asal' : o}</option>)}
+            {origins.map((o, idx) => <option key={`${o}-${idx}`} value={o}>{o === 'all' ? 'Semua Asal' : o}</option>)}
           </select>
         </div>
         <div className="form-group" style={{ minWidth: '150px' }}>

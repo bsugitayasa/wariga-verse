@@ -3,26 +3,29 @@ import Header from './components/Header';
 import InputForm from './components/InputForm';
 import AnalysisDashboard from './components/AnalysisDashboard';
 import NameRecommendation from './components/NameRecommendation';
+import NameComparison from './components/NameComparison';
 import LifePatternTimeline from './components/LifePatternTimeline';
 import { runFullAnalysis, recommendNames } from './engines/scoreAggregator';
 
 export default function App() {
   const [analysis, setAnalysis] = useState(null);
+  const [comparison, setComparison] = useState(null);
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [lastFormData, setLastFormData] = useState(null);
   const resultsRef = useRef(null);
 
   const handleSubmit = useCallback((formData) => {
-    setAnalysis(null); // Clear previous results to force refresh
+    setAnalysis(null);
+    setComparison(null);
     setRecommendations([]);
+    setLastFormData(formData);
     setLoading(true);
 
-    // Use setTimeout to allow the loading state to render
     setTimeout(() => {
       try {
         const childName = formData.child.name || (formData.isSelfAnalysis ? 'Saya' : 'Anak');
 
-        // Run full analysis
         const result = runFullAnalysis(
           formData.father.name, formData.father.birthDate,
           formData.mother.name, formData.mother.birthDate,
@@ -30,10 +33,8 @@ export default function App() {
           formData.child.gender
         );
         
-        // Add timestamp to ensure unique key for re-rendering
         result.timestamp = Date.now();
 
-        // Get name recommendations (only for child mode)
         let names = [];
         if (!formData.isSelfAnalysis) {
           names = recommendNames(
@@ -47,7 +48,6 @@ export default function App() {
         setAnalysis(result);
         setRecommendations(names);
 
-        // Scroll to results
         setTimeout(() => {
           resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
@@ -58,6 +58,27 @@ export default function App() {
       }
     }, 300);
   }, []);
+
+  const handleCompare = useCallback((compareName) => {
+    if (!compareName) {
+      setComparison(null);
+      return;
+    }
+    if (!lastFormData) return;
+    
+    try {
+      const compResult = runFullAnalysis(
+        lastFormData.father.name, lastFormData.father.birthDate,
+        lastFormData.mother.name, lastFormData.mother.birthDate,
+        compareName, lastFormData.child.birthDate,
+        lastFormData.child.gender
+      );
+      compResult.compareName = compareName;
+      setComparison(compResult);
+    } catch (err) {
+      console.error('Comparison error:', err);
+    }
+  }, [lastFormData]);
 
   return (
     <div className="app">
@@ -88,6 +109,15 @@ export default function App() {
               {/* Dashboard Result */}
               <section style={{ marginBottom: '2rem' }}>
                 <AnalysisDashboard key={analysis.timestamp} analysis={analysis} />
+              </section>
+
+              {/* Name Comparison Section */}
+              <section style={{ marginBottom: '2rem' }}>
+                <NameComparison 
+                  primaryAnalysis={analysis} 
+                  comparisonAnalysis={comparison} 
+                  onCompare={handleCompare} 
+                />
               </section>
 
               {/* Recommendations (Only if available) */}

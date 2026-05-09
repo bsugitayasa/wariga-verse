@@ -44,7 +44,15 @@ export function runFullAnalysis(fatherName, fatherBirth, motherName, motherBirth
 
   const lifePath = calculateLifePath(childBirth);
   const destinyMatch = childNumerology.destiny === lifePath;
-  const numerologyScore = Math.min(100, familyNumerologyScore + (destinyMatch ? 15 : 0));
+  const chaldeanMatch = childNumerology.chaldeanDestiny === lifePath;
+  
+  // Base family harmony + bonuses for individual matches and metaphysical alignment
+  const numerologyScore = Math.min(100, 
+    familyNumerologyScore + 
+    (destinyMatch ? 10 : 0) + 
+    (chaldeanMatch ? 5 : 0) + 
+    (childNumerology.metaphysicalScore > 10 ? 10 : childNumerology.metaphysicalScore > 5 ? 5 : 0)
+  );
 
   const nameEntry = namesDatabase.find(n => childName.toUpperCase().includes(n.name.toUpperCase()));
   const chineseElementMap = { 'fire': 'Fire', 'water': 'Water', 'earth': 'Earth', 'air': 'Metal', 'center': 'Earth' };
@@ -247,5 +255,5 @@ export function recommendNames(fatherName, fatherBirth, motherName, motherBirth,
     return true;
   });
 
-  return unique.slice(0, 5);
+  return unique.slice(0, 50);
 }

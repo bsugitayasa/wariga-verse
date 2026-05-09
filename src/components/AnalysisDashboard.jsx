@@ -232,7 +232,7 @@ function JyotishaTab({ data }) {
         </p>
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           {jyo.recommendedSyllables.map((s, idx) => (
-            <div key={s} style={{ 
+            <div key={`${s}-${idx}`} style={{ 
               padding: '0.75rem 1.5rem', 
               background: idx + 1 === jyo.pada ? 'var(--gold)' : 'rgba(255,255,255,0.05)',
               color: idx + 1 === jyo.pada ? '#000' : 'var(--text-primary)',
@@ -396,72 +396,166 @@ function NumerologyTab({ data, isSelf }) {
     { label: 'Swara (Expression)', value: num.swara, interp: num.swaraInterpretation, breakdown: num.destinyBreakdown },
     { label: 'Life Path', value: num.lifePath, interp: num.lifePathInterpretation },
     { label: 'Personality', value: num.personality, interp: num.personalityInterpretation },
+    { label: 'Chaldean Destiny', value: num.chaldeanDestiny, interp: num.chaldeanInterpretation },
   ];
+
+  const getMetaphysicalStatus = (score) => {
+    if (score >= 10) return { label: 'Sangat Positif', color: 'var(--accent-green)' };
+    if (score >= 5) return { label: 'Positif', color: 'var(--accent-green)' };
+    if (score >= 0) return { label: 'Netral', color: 'var(--gold)' };
+    return { label: 'Negatif/Tantangan', color: 'var(--accent-red)' };
+  };
+
+  const metaStatus = getMetaphysicalStatus(num.metaphysicalScore);
 
   return (
     <div className="glass-card">
-      <h3 style={{ marginBottom: '1.5rem' }}>🔢 Analisis Numerologi {isSelf ? '' : '— Anak'}</h3>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-        {items.map(item => (
-          <div key={item.label} className="glass-card" style={{ padding: '1rem', border: '1px solid rgba(255,255,255,0.05)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-              <div style={{
-                width: '52px', height: '52px', borderRadius: '50%', display: 'flex',
-                alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '1.4rem',
-                background: 'rgba(245,158,11,0.1)', color: 'var(--gold)', border: '2px solid rgba(245,158,11,0.3)',
-              }}>
-                {item.value}
-              </div>
-              <div>
-                <h4 style={{ marginBottom: '2px', fontSize: '1.1rem' }}>{item.label}</h4>
-                <span className="badge badge--purple">{item.interp?.title}</span>
-              </div>
-            </div>
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.5', marginBottom: item.breakdown ? '1rem' : '0' }}>
-              {item.interp?.description}
-            </p>
-
-            {item.breakdown && (
-              <div style={{ padding: '0.75rem', background: 'rgba(0,0,0,0.2)', borderRadius: '8px' }}>
-                <p style={{ fontSize: '0.75rem', color: 'var(--gold)', marginBottom: '0.5rem', fontWeight: 600 }}>Rincian Perhitungan Pythagoras:</p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
-                  {item.breakdown.map((b, i) => (
-                    <div key={i} style={{ textAlign: 'center', minWidth: '24px' }}>
-                      <div style={{ fontSize: '0.9rem', fontWeight: 600 }}>{b.char}</div>
-                      <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>{b.value || '-'}</div>
-                    </div>
-                  ))}
-                  <div style={{ marginLeft: '8px', borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '8px' }}>
-                    <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Total</div>
-                    <div style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--gold)' }}>
-                      {item.breakdown.reduce((s, b) => s + (b.value || 0), 0)} → {item.value}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-      
-      {/* Pythagorean Table Reference */}
-      <div style={{ marginTop: '2rem', padding: '1rem', background: 'rgba(255,255,255,0.03)', borderRadius: '12px' }}>
-        <h4 style={{ fontSize: '0.85rem', marginBottom: '0.75rem', textAlign: 'center', opacity: 0.8 }}>Tabel Konversi Pythagoras</h4>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(9, 1fr)', gap: '4px', textAlign: 'center' }}>
-          {[1,2,3,4,5,6,7,8,9].map(n => <div key={n} style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--gold)' }}>{n}</div>)}
-          {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(c => {
-            const val = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".indexOf(c) % 9 + 1;
-            // Wait, Z is 8. My map said S=1...Z=8. Let's verify.
-            // A(1) B(2) C(3) D(4) E(5) F(6) G(7) H(8) I(9)
-            // J(1) K(2) L(3) M(4) N(5) O(6) P(7) Q(8) R(9)
-            // S(1) T(2) U(3) V(4) W(5) X(6) Y(7) Z(8)
-            return <div key={c} style={{ fontSize: '0.65rem' }}>{c}</div>
-          })}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+        <h3 style={{ margin: 0 }}>🔢 Analisis Numerologi Metafisik {isSelf ? '' : '— Anak'}</h3>
+        <div className="glass-card" style={{ padding: '0.5rem 1rem', display: 'flex', alignItems: 'center', gap: '10px', background: 'rgba(255,255,255,0.03)' }}>
+          <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Skor Metafisik:</span>
+          <strong style={{ color: metaStatus.color, fontSize: '1.1rem' }}>{num.metaphysicalScore}</strong>
+          <span className="badge" style={{ background: `${metaStatus.color}20`, color: metaStatus.color, border: `1px solid ${metaStatus.color}40` }}>
+            {metaStatus.label}
+          </span>
         </div>
       </div>
 
-      <div style={{ marginTop: '1.5rem', fontSize: '0.8rem', color: 'var(--text-muted)', textAlign: 'center' }}>
-        Skor Numerologi Keluarga: <span className={getScoreClass(data.score)} style={{ fontWeight: 700 }}>{data.score}</span>
+      {/* Main Grid */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+        {/* Top Analysis: Primbon & Metaphysical */}
+        <div className="grid-2" style={{ gap: '1.5rem' }}>
+          <div className="glass-card" style={{ padding: '1.25rem', border: '1px solid rgba(124,58,237,0.2)', background: 'rgba(124,58,237,0.02)' }}>
+            <h4 style={{ color: 'var(--purple-light)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              🔱 Primbon Modern (Neptu Nama)
+            </h4>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+              <div style={{ width: 60, height: 60, borderRadius: '50%', background: 'var(--purple-light)', color: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 900 }}>
+                {num.destinyInterpretation.metaphysicalScore + num.chaldeanInterpretation.metaphysicalScore}
+              </div>
+              <div>
+                <div style={{ fontWeight: 700, fontSize: '1.1rem' }}>{num.destinyInterpretation.primbonArchetype}</div>
+                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{num.destinyInterpretation.primbonMeaning}</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="glass-card" style={{ padding: '1.25rem', border: '1px solid rgba(245,158,11,0.2)', background: 'rgba(245,158,11,0.02)' }}>
+            <h4 style={{ color: 'var(--gold)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              🔮 Tafsir Metafisika Chaldean
+            </h4>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+              <div style={{ width: 60, height: 60, borderRadius: '50%', border: '2px solid var(--gold)', color: 'var(--gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 900 }}>
+                {num.chaldeanDestiny}
+              </div>
+              <div>
+                <div style={{ fontWeight: 700, fontSize: '1.1rem' }}>{num.chaldeanInterpretation.chaldeanTitle}</div>
+                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{num.chaldeanInterpretation.chaldeanDescription}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Word by Word Analysis */}
+        <div className="glass-card" style={{ padding: '1.5rem' }}>
+          <h4 style={{ marginBottom: '1rem' }}>📝 Analisis Nama Per Kata</h4>
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
+              <thead>
+                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                  <th style={{ textAlign: 'left', padding: '0.75rem' }}>Kata</th>
+                  <th style={{ textAlign: 'center', padding: '0.75rem' }}>Pythagoras</th>
+                  <th style={{ textAlign: 'center', padding: '0.75rem' }}>Chaldean</th>
+                  <th style={{ textAlign: 'center', padding: '0.75rem' }}>Neptu</th>
+                  <th style={{ textAlign: 'left', padding: '0.75rem' }}>Karakter</th>
+                </tr>
+              </thead>
+              <tbody>
+                {num.wordAnalysis.map((word, idx) => (
+                  <tr key={idx} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                    <td style={{ padding: '0.75rem', fontWeight: 700 }}>{word.word}</td>
+                    <td style={{ padding: '0.75rem', textAlign: 'center' }}><span className="badge badge--purple">{word.pythagorean}</span></td>
+                    <td style={{ padding: '0.75rem', textAlign: 'center' }}><span className="badge badge--gold">{word.chaldean}</span></td>
+                    <td style={{ padding: '0.75rem', textAlign: 'center' }}><span className="badge">{word.neptu}</span></td>
+                    <td style={{ padding: '0.75rem', color: 'var(--text-secondary)' }}>{word.interpretation.title}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Karmic & Growth Analysis */}
+        <div className="grid-2" style={{ gap: '1.5rem' }}>
+          <div className="glass-card" style={{ padding: '1.25rem', background: 'rgba(239,68,68,0.02)', border: '1px solid rgba(239,68,68,0.1)' }}>
+            <h4 style={{ color: 'var(--accent-red)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              ⚠️ Analisis Karmik
+            </h4>
+            <div style={{ fontSize: '0.85rem' }}>
+              <p style={{ marginBottom: '0.75rem' }}>
+                <strong>Karmic Lessons (Pelajaran Hidup):</strong><br />
+                {num.karmicLessons?.length > 0 ? (
+                  <span style={{ color: 'var(--text-secondary)' }}>Angka yang kurang dalam nama: {num.karmicLessons.join(', ')}</span>
+                ) : (
+                  <span style={{ color: 'var(--accent-green)' }}>Semua angka lengkap. Tidak ada pelajaran khusus.</span>
+                )}
+              </p>
+              <p>
+                <strong>Karmic Debts (Hutang Karmik):</strong><br />
+                {num.karmicDebts?.length > 0 ? (
+                  <span style={{ color: 'var(--accent-orange)' }}>Terdeteksi angka: {num.karmicDebts.join(', ')}</span>
+                ) : (
+                  <span style={{ color: 'var(--accent-green)' }}>Tidak terdeteksi hutang karmik.</span>
+                )}
+              </p>
+            </div>
+          </div>
+
+          <div className="glass-card" style={{ padding: '1.25rem', background: 'rgba(16,185,129,0.02)', border: '1px solid rgba(16,185,129,0.1)' }}>
+            <h4 style={{ color: 'var(--accent-green)', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              🌱 Angka Pertumbuhan (Growth Number)
+            </h4>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <div style={{ width: 50, height: 50, borderRadius: '50%', background: 'var(--accent-green)', color: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', fontWeight: 800 }}>
+                {num.growthNumber}
+              </div>
+              <div>
+                <div style={{ fontWeight: 700 }}>Energi Nama Depan</div>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Mewakili potensi pengembangan diri di masa muda.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Traditional Items */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+          {items.map(item => (
+            <div key={item.label} className="glass-card" style={{ padding: '1.25rem', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                <div style={{
+                  width: '48px', height: '48px', borderRadius: '12px', display: 'flex',
+                  alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '1.2rem',
+                  background: 'rgba(255,255,255,0.03)', color: 'var(--gold)', border: '1px solid rgba(255,255,255,0.1)',
+                }}>
+                  {item.value}
+                </div>
+                <div>
+                  <h4 style={{ marginBottom: '2px', fontSize: '1rem' }}>{item.label}</h4>
+                  <span className="badge badge--purple" style={{ fontSize: '0.7rem' }}>{item.interp?.title}</span>
+                </div>
+              </div>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+                {item.interp?.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <div style={{ marginTop: '2rem', padding: '1rem', textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+        <p className="text-muted" style={{ fontSize: '0.85rem' }}>
+          Gabungan Analisis Pythagoras, Chaldean, dan Primbon Modern
+        </p>
       </div>
     </div>
   );
@@ -559,7 +653,7 @@ function NawaSangaTab({ data }) {
           </div>
           <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>{ns.interpretation}</p>
           <div style={{ marginTop: '0.75rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-            {ns.positiveTraits?.map(t => <span key={t} className="badge badge--green">{t}</span>)}
+            {ns.positiveTraits?.map((t, tIdx) => <span key={`${t}-${tIdx}`} className="badge badge--green">{t}</span>)}
           </div>
         </div>
       </div>

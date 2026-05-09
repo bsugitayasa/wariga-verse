@@ -7,7 +7,12 @@
       "strengths": "Mandiri, kreatif, ambisius, pelopor",
       "challenges": "Keras kepala, egois, dominan",
       "element": "Api",
-      "planet": "Matahari"
+      "planet": "Matahari",
+      "chaldeanTitle": "Sang Pemenang",
+      "chaldeanDescription": "Fokus pada kemauan yang tak tergoyahkan dan kesuksesan melalui usaha individu.",
+      "metaphysicalScore": 5,
+      "primbonArchetype": "Eka Sasmita",
+      "primbonMeaning": "Awal dari segala sesuatu, melambangkan kesatuan dan kekuatan absolut."
     },
     "2": {
       "title": "Diplomat & Penyeimbang",
@@ -16,7 +21,12 @@
       "strengths": "Diplomatik, penyayang, kooperatif, intuitif",
       "challenges": "Terlalu sensitif, ragu-ragu, mudah terpengaruh",
       "element": "Air",
-      "planet": "Bulan"
+      "planet": "Bulan",
+      "chaldeanTitle": "Pasangan Harmonis",
+      "chaldeanDescription": "Menonjolkan intuisi dan kekuatan yang datang dari kerja sama.",
+      "metaphysicalScore": 4,
+      "primbonArchetype": "Dwi Amerta",
+      "primbonMeaning": "Dualitas yang saling melengkapi, seperti siang dan malam."
     },
     "3": {
       "title": "Kreator & Komunikator",
@@ -25,7 +35,12 @@
       "strengths": "Kreatif, ekspresif, optimis, sosial",
       "challenges": "Berlebihan, dangkal, mudah bosan",
       "element": "Api",
-      "planet": "Jupiter"
+      "planet": "Jupiter",
+      "chaldeanTitle": "Sang Ekspresionis",
+      "chaldeanDescription": "Energi ekspansi dan keberuntungan dalam komunikasi.",
+      "metaphysicalScore": 5,
+      "primbonArchetype": "Tri Shakti",
+      "primbonMeaning": "Tiga kekuatan utama: Penciptaan, Pemeliharaan, dan Peleburan."
     },
     "4": {
       "title": "Pembangun & Pekerja Keras",
@@ -34,7 +49,12 @@
       "strengths": "Disiplin, andal, praktis, pekerja keras",
       "challenges": "Kaku, membosankan, keras kepala",
       "element": "Tanah",
-      "planet": "Uranus"
+      "planet": "Uranus",
+      "chaldeanTitle": "Pilar Stabilitas",
+      "chaldeanDescription": "Keteguhan dalam menghadapi rintangan melalui struktur.",
+      "metaphysicalScore": -2,
+      "primbonArchetype": "Catur Warna",
+      "primbonMeaning": "Empat pilar kehidupan, menuntut disiplin dan keteraturan."
     },
     "5": {
       "title": "Petualang & Pelopor Perubahan",
@@ -43,7 +63,12 @@
       "strengths": "Adaptif, petualang, versatil, energik",
       "challenges": "Tidak konsisten, gelisah, impulsif",
       "element": "Udara",
-      "planet": "Merkurius"
+      "planet": "Merkurius",
+      "chaldeanTitle": "Komunikator Ulung",
+      "chaldeanDescription": "Kecerdasan cepat dan adaptasi instan terhadap situasi.",
+      "metaphysicalScore": 3,
+      "primbonArchetype": "Panca Pandawa",
+      "primbonMeaning": "Lima indra dan dinamika kehidupan yang terus bergerak."
     },
     "6": {
       "title": "Pengasuh & Pelindung",
@@ -52,7 +77,12 @@
       "strengths": "Penyayang, bertanggung jawab, pelindung, harmonis",
       "challenges": "Terlalu mengontrol, khawatir berlebihan, perfeksionis",
       "element": "Tanah",
-      "planet": "Venus"
+      "planet": "Venus",
+      "chaldeanTitle": "Penjaga Kedamaian",
+      "chaldeanDescription": "Keberuntungan dalam hubungan dan kenyamanan material.",
+      "metaphysicalScore": 4,
+      "primbonArchetype": "Sad Rasa",
+      "primbonMeaning": "Enam rasa kehidupan, keharmonisan dalam keluarga dan cinta."
     },
     "7": {
       "title": "Pencari Kebenaran & Mistikus",
@@ -61,7 +91,12 @@
       "strengths": "Bijaksana, analitis, spiritual, mendalam",
       "challenges": "Menarik diri, skeptis, sulit didekati",
       "element": "Air",
-      "planet": "Neptunus"
+      "planet": "Neptunus",
+      "chaldeanTitle": "Sang Pencari",
+      "chaldeanDescription": "Kedalaman batin dan perlindungan spiritual yang kuat.",
+      "metaphysicalScore": 2,
+      "primbonArchetype": "Saptawara",
+      "primbonMeaning": "Tujuh hari semesta, pencarian ilmu dan kebijaksanaan ilahi."
     },
     "8": {
       "title": "Eksekutif & Pembangun Kekayaan",
@@ -70,7 +105,12 @@
       "strengths": "Ambisius, kuat, manajerial, berwibawa",
       "challenges": "Materialistis, otoriter, workaholic",
       "element": "Tanah",
-      "planet": "Saturnus"
+      "planet": "Saturnus",
+      "chaldeanTitle": "Penguasa Duniawi",
+      "chaldeanDescription": "Sering menghadapi tantangan besar namun memberikan hasil yang sangat besar.",
+      "metaphysicalScore": -3,
+      "primbonArchetype": "Asta Brata",
+      "primbonMeaning": "Delapan sifat kepemimpinan, berat namun membawa kekuasaan."
     },
     "9": {
       "title": "Pelayan & Pencerah",
@@ -79,7 +119,12 @@
       "strengths": "Mulia, bijaksana, idealis, dermawan",
       "challenges": "Naif, terlalu idealis, merasa superior",
       "element": "Api",
-      "planet": "Mars"
+      "planet": "Mars",
+      "chaldeanTitle": "Ksatria Kemanusiaan",
+      "chaldeanDescription": "Penyelesaian siklus dan dedikasi pada kebaikan umum.",
+      "metaphysicalScore": 5,
+      "primbonArchetype": "Nawa Sanga",
+      "primbonMeaning": "Sembilan penjuru mata angin, kesempurnaan batin dan pelayanan."
     },
     "11": {
       "title": "Master Intuisi (Master Number)",
@@ -88,7 +133,12 @@
       "strengths": "Sangat intuitif, visioner, inspiratif, spiritual",
       "challenges": "Kecemasan tinggi, terlalu sensitif, tekanan batin",
       "element": "Cahaya",
-      "planet": "Matahari-Bulan"
+      "planet": "Matahari-Bulan",
+      "chaldeanTitle": "Sang Utusan",
+      "chaldeanDescription": "Kekuatan inspirasi yang melampaui logika biasa.",
+      "metaphysicalScore": 5,
+      "primbonArchetype": "Sang Hyang Widhi",
+      "primbonMeaning": "Hubungan langsung dengan cahaya Ilahi."
     },
     "22": {
       "title": "Master Pembangun (Master Number)",
@@ -97,7 +147,12 @@
       "strengths": "Visioner praktis, pembangun, berpengaruh, manifestor",
       "challenges": "Beban tanggung jawab besar, perfeksionis ekstrem, kelelahan",
       "element": "Tanah-Cahaya",
-      "planet": "Saturnus-Bulan"
+      "planet": "Saturnus-Bulan",
+      "chaldeanTitle": "Arsitek Semesta",
+      "chaldeanDescription": "Mewujudkan mimpi besar menjadi struktur yang nyata.",
+      "metaphysicalScore": 5,
+      "primbonArchetype": "Karya Agung",
+      "primbonMeaning": "Perwujudan nyata dari cita-cita luhur."
     },
     "33": {
       "title": "Master Guru (Master Number)",
@@ -106,7 +161,12 @@
       "strengths": "Guru alami, penyembuh, penuh kasih, pelayan",
       "challenges": "Mengorbankan diri berlebihan, beban emosional berat",
       "element": "Akasa",
-      "planet": "Jupiter-Venus"
+      "planet": "Jupiter-Venus",
+      "chaldeanTitle": "Sang Penyembuh",
+      "chaldeanDescription": "Cinta kasih murni yang menyembuhkan dunia.",
+      "metaphysicalScore": 5,
+      "primbonArchetype": "Giriloka",
+      "primbonMeaning": "Puncak kesadaran spiritual dan cinta kasih."
     }
   }
 }
