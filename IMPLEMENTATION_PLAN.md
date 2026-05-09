@@ -1,4 +1,4 @@
-# Mini Wariga — Aplikasi Rekomendasi Nama Anak Hindu Bali
+# Wariga Verse — Aplikasi Rekomendasi Nama Anak Hindu Bali
 
 Aplikasi web SPA untuk menghitung keselarasan nama anak berdasarkan 5 pendekatan spiritual/tradisional, serta merekomendasikan nama terbaik dari database nama Sanskerta/Hindu/Bali.
 

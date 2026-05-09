@@ -1,0 +1,242 @@
+[
+  {
+    "index": 0,
+    "name": "Sinta",
+    "urip": 7,
+    "deity": "Yamadipati",
+    "watak": "Berwatak keras, tegas, dan berani. Memiliki jiwa kepemimpinan yang kuat.",
+    "description": "Wuku pertama dalam siklus Pawukon. Orang yang lahir pada wuku ini memiliki karakter yang kuat dan tegas."
+  },
+  {
+    "index": 1,
+    "name": "Landep",
+    "urip": 1,
+    "deity": "Mahadewa",
+    "watak": "Cerdas, tajam pikiran, dan pandai berbicara. Mudah memahami sesuatu.",
+    "description": "Wuku yang melambangkan ketajaman. Orang yang lahir pada wuku ini memiliki kecerdasan alami."
+  },
+  {
+    "index": 2,
+    "name": "Ukir",
+    "urip": 4,
+    "deity": "Brahma",
+    "watak": "Kreatif, artistik, dan memiliki jiwa seni yang tinggi. Mahir dalam kerajinan.",
+    "description": "Wuku yang melambangkan kreativitas dan seni ukir."
+  },
+  {
+    "index": 3,
+    "name": "Kulantir",
+    "urip": 6,
+    "deity": "Wisnu",
+    "watak": "Bijaksana, sabar, dan penuh pertimbangan. Suka menolong sesama.",
+    "description": "Wuku yang melambangkan kebijaksanaan."
+  },
+  {
+    "index": 4,
+    "name": "Tulu",
+    "urip": 5,
+    "deity": "Iswara",
+    "watak": "Teguh pendirian, setia, dan dapat diandalkan. Memiliki ketahanan mental yang baik.",
+    "description": "Wuku yang melambangkan keteguhan hati."
+  },
+  {
+    "index": 5,
+    "name": "Gumbreg",
+    "urip": 8,
+    "deity": "Rudra",
+    "watak": "Kuat secara fisik, pekerja keras, dan pantang menyerah. Cocok menjadi pelindung.",
+    "description": "Wuku yang melambangkan kekuatan dan ketangguhan."
+  },
+  {
+    "index": 6,
+    "name": "Wariga",
+    "urip": 9,
+    "deity": "Siwa",
+    "watak": "Spiritual, bijaksana, dan memiliki intuisi kuat. Sering menjadi penasehat.",
+    "description": "Wuku yang melambangkan keseimbangan dan harmoni alam."
+  },
+  {
+    "index": 7,
+    "name": "Warigadean",
+    "urip": 3,
+    "deity": "Dewi Sri",
+    "watak": "Lembut, penyayang, dan murah hati. Membawa kemakmuran bagi keluarga.",
+    "description": "Wuku yang melambangkan kemakmuran dan kesuburan."
+  },
+  {
+    "index": 8,
+    "name": "Julungwangi",
+    "urip": 7,
+    "deity": "Gana",
+    "watak": "Ceria, optimis, dan membawa kebahagiaan. Pandai bergaul dan disenangi banyak orang.",
+    "description": "Wuku yang melambangkan keceriaan dan keindahan."
+  },
+  {
+    "index": 9,
+    "name": "Sungsang",
+    "urip": 1,
+    "deity": "Durga",
+    "watak": "Mandiri, unik, dan berpikiran berbeda. Sering menemukan jalan sendiri.",
+    "description": "Wuku yang melambangkan kemandirian dan keunikan."
+  },
+  {
+    "index": 10,
+    "name": "Dungulan",
+    "urip": 4,
+    "deity": "Kala",
+    "watak": "Tegas, berani, dan pantang mundur. Memiliki semangat juang yang tinggi.",
+    "description": "Wuku yang melambangkan keberanian dan ketegasan."
+  },
+  {
+    "index": 11,
+    "name": "Kuningan",
+    "urip": 6,
+    "deity": "Sang Hyang Widhi",
+    "watak": "Mulia, dermawan, dan religius. Dekat dengan hal-hal spiritual.",
+    "description": "Wuku yang melambangkan kemuliaan. Hari raya Kuningan jatuh di wuku ini."
+  },
+  {
+    "index": 12,
+    "name": "Langkir",
+    "urip": 5,
+    "deity": "Dewi Saraswati",
+    "watak": "Cerdas, gemar belajar, dan menguasai ilmu pengetahuan. Cocok menjadi pendidik.",
+    "description": "Wuku yang melambangkan ilmu pengetahuan."
+  },
+  {
+    "index": 13,
+    "name": "Medangsia",
+    "urip": 8,
+    "deity": "Indra",
+    "watak": "Pemimpin alami, berwibawa, dan bertanggung jawab. Disegani banyak orang.",
+    "description": "Wuku yang melambangkan kepemimpinan."
+  },
+  {
+    "index": 14,
+    "name": "Pujut",
+    "urip": 9,
+    "deity": "Guru",
+    "watak": "Sabar, tenang, dan penuh kasih sayang. Pandai membimbing orang lain.",
+    "description": "Wuku yang melambangkan kesabaran dan bimbingan."
+  },
+  {
+    "index": 15,
+    "name": "Pahang",
+    "urip": 3,
+    "deity": "Yama",
+    "watak": "Pemberani, petualang, dan suka tantangan. Tidak takut menghadapi kesulitan.",
+    "description": "Wuku yang melambangkan keberanian menghadapi tantangan."
+  },
+  {
+    "index": 16,
+    "name": "Krulut",
+    "urip": 7,
+    "deity": "Bayu",
+    "watak": "Dinamis, energik, dan penuh semangat. Suka bergerak dan tidak bisa diam.",
+    "description": "Wuku yang melambangkan kedinamisan."
+  },
+  {
+    "index": 17,
+    "name": "Mrakih",
+    "urip": 1,
+    "deity": "Kuwera",
+    "watak": "Cermat, teliti, dan pandai mengelola. Berbakat dalam hal keuangan.",
+    "description": "Wuku yang melambangkan kecermatan dan pengelolaan."
+  },
+  {
+    "index": 18,
+    "name": "Tambir",
+    "urip": 4,
+    "deity": "Brahma",
+    "watak": "Kreatif, inovatif, dan penuh ide. Suka menciptakan hal-hal baru.",
+    "description": "Wuku yang melambangkan kreativitas dan inovasi."
+  },
+  {
+    "index": 19,
+    "name": "Medangkungan",
+    "urip": 6,
+    "deity": "Wisnu",
+    "watak": "Pelindung, setia, dan penuh tanggung jawab. Sangat menjaga keluarga.",
+    "description": "Wuku yang melambangkan perlindungan."
+  },
+  {
+    "index": 20,
+    "name": "Matal",
+    "urip": 5,
+    "deity": "Surya",
+    "watak": "Bersinar, positif, dan membawa pengaruh baik. Menjadi teladan bagi orang lain.",
+    "description": "Wuku yang melambangkan cahaya dan pengaruh positif."
+  },
+  {
+    "index": 21,
+    "name": "Uye",
+    "urip": 8,
+    "deity": "Candra",
+    "watak": "Sensitif, intuitif, dan memiliki perasaan yang dalam. Cocok dalam bidang seni.",
+    "description": "Wuku yang melambangkan intuisi dan perasaan."
+  },
+  {
+    "index": 22,
+    "name": "Menail",
+    "urip": 9,
+    "deity": "Kala",
+    "watak": "Kuat, tahan banting, dan penuh determinasi. Mampu melewati masa sulit.",
+    "description": "Wuku yang melambangkan ketahanan dan determinasi."
+  },
+  {
+    "index": 23,
+    "name": "Prangbakat",
+    "urip": 3,
+    "deity": "Bhatari Uma",
+    "watak": "Lembut namun tegas, penyayang, dan penuh perhatian. Menjaga keharmonisan.",
+    "description": "Wuku yang melambangkan keharmonisan."
+  },
+  {
+    "index": 24,
+    "name": "Bala",
+    "urip": 7,
+    "deity": "Kumara",
+    "watak": "Kuat, gagah, dan memiliki semangat tinggi. Suka berkompetisi.",
+    "description": "Wuku yang melambangkan kekuatan dan semangat."
+  },
+  {
+    "index": 25,
+    "name": "Ugu",
+    "urip": 1,
+    "deity": "Dewi Sri",
+    "watak": "Sederhana, rendah hati, dan bekerja tanpa pamrih. Membawa ketenangan.",
+    "description": "Wuku yang melambangkan kesederhanaan."
+  },
+  {
+    "index": 26,
+    "name": "Wayang",
+    "urip": 4,
+    "deity": "Sang Hyang Tunggal",
+    "watak": "Misterius, dalam, dan penuh kebijaksanaan tersembunyi. Memiliki dua sisi.",
+    "description": "Wuku yang melambangkan dualitas dan kebijaksanaan tersembunyi."
+  },
+  {
+    "index": 27,
+    "name": "Klawu",
+    "urip": 6,
+    "deity": "Ciwa",
+    "watak": "Tenang, kalem, dan berpikir mendalam. Tidak terburu-buru dalam bertindak.",
+    "description": "Wuku yang melambangkan ketenangan dan kedamaian."
+  },
+  {
+    "index": 28,
+    "name": "Dukut",
+    "urip": 5,
+    "deity": "Bhatara Wisnu",
+    "watak": "Sederhana, tulus, dan dekat dengan alam. Mencintai kehidupan yang alami.",
+    "description": "Wuku yang melambangkan kesederhanaan dan kedekatan dengan alam."
+  },
+  {
+    "index": 29,
+    "name": "Watugunung",
+    "urip": 8,
+    "deity": "Antaboga",
+    "watak": "Kokoh, teguh, dan tidak mudah goyah. Menjadi pondasi bagi keluarga.",
+    "description": "Wuku terakhir dalam siklus Pawukon. Melambangkan kekuatan dan keteguhan."
+  }
+]
