@@ -168,5 +168,111 @@
       "primbonArchetype": "Giriloka",
       "primbonMeaning": "Puncak kesadaran spiritual dan cinta kasih."
     }
+  },
+  "karmicDebts": {
+    "13": {
+      "title": "Hutang Karma 13: Kerja Keras & Disiplin",
+      "description": "Angka karmik 13 menunjukkan hutang karma dari kehidupan masa lalu yang berkaitan dengan kemalasan atau menghindari tanggung jawab. Di kehidupan ini, Anda dituntut untuk bekerja ekstra keras dan disiplin. Setiap jalan pintas akan membawa hambatan. Jika Anda fokus dan konsisten, sukses yang diraih akan sangat kokoh."
+    },
+    "14": {
+      "title": "Hutang Karma 14: Kebebasan & Godaan",
+      "description": "Hutang karma 14 berkaitan dengan penyalahgunaan kebebasan atau mengekang kebebasan orang lain di masa lalu. Tantangan di kehidupan ini adalah godaan ekstrem (seks, obat, makanan, foya-foya). Pelajaran utamanya adalah belajar tentang fleksibilitas, adaptasi, tanpa kehilangan kendali diri atau komitmen."
+    },
+    "16": {
+      "title": "Hutang Karma 16: Kejatuhan Ego",
+      "description": "Hutang karma 16 adalah tentang ego yang destruktif dan kesombongan di masa lalu yang merugikan hubungan. Dalam kehidupan ini, Anda akan sering mengalami 'kehancuran' pada pondasi yang Anda bangun, agar Anda belajar berserah diri pada hal spiritual dan melepaskan ego keduniawian."
+    },
+    "19": {
+      "title": "Hutang Karma 19: Kemandirian & Menerima Bantuan",
+      "description": "Hutang karma 19 berasal dari penyalahgunaan kekuasaan dan dominasi yang egois di masa lalu. Pelajarannya di kehidupan ini adalah menyadari bahwa Anda tidak bisa melakukan segalanya sendirian. Anda dipaksa belajar untuk mandiri namun pada akhirnya harus belajar meminta dan menerima bantuan dari orang lain."
+    }
+  },
+  "chaldeanCompounds": {
+    "10": "The Wheel of Fortune: Kehormatan, kepercayaan diri. Seringkali rencana terwujud dengan baik.",
+    "11": "A Warning of Hidden Dangers: Peringatan akan kesulitan tak terduga, pengkhianatan tersembunyi dari teman.",
+    "12": "The Sacrifice / The Victim: Kecenderungan mengorbankan diri demi orang lain. Kegelisahan batin.",
+    "13": "Regeneration and Change: Bukan angka sial. Simbol kekuatan, perubahan besar, jika dimanfaatkan dengan baik akan membawa sukses.",
+    "14": "Movement and Challenge: Membawa banyak pergerakan, keberuntungan terkait bisnis, tapi sering ada risiko dari tindakan impulsif.",
+    "15": "The Magician: Angka pesona magis, magnetisme, seni, musik. Menarik dukungan tak terduga.",
+    "16": "The Shattered Citadel: Peringatan akan kecelakaan, rencana yang digagalkan. Harus sangat berhati-hati dalam merencanakan hidup.",
+    "17": "The Star of the Magi: Angka yang sangat spiritual. Mengatasi rintangan dan penderitaan untuk mencapai ketenaran yang damai.",
+    "18": "Materialism and Strife: Bahaya dari perselisihan, pertengkaran internal dalam keluarga, tipu daya. Hati-hati dengan ledakan emosi.",
+    "19": "The Prince of Heaven: Salah satu angka paling beruntung. Sukses, kekuasaan, kehormatan, dan pengakuan publik.",
+    "20": "The Awakening: Keadilan spiritual. Melambangkan kebangkitan rohani dan tujuan baru, tapi bukan angka sukses material besar.",
+    "21": "The Crown of the Magi: Kemajuan, kehormatan, elevasi sukses. Sangat beruntung setelah inisiasi panjang.",
+    "22": "Submission and Caution: Pemimpi baik namun salah arah. Terlalu mudah dipengaruhi oleh orang lain yang berujung pada kerugian.",
+    "23": "The Royal Star of the Lion: Kesuksesan finansial dan pengakuan. Mengundang perlindungan dari atasan atau petinggi.",
+    "24": "Love, Money, and Creativity: Kesuksesan besar di bidang hukum, cinta, kesenian, dan uang. Sangat harmonis dan membawa rezeki.",
+    "25": "Discrimination and Analysis: Mendapat keberuntungan lewat pembelajaran, analisa, dan pengamatan yang gigih.",
+    "26": "Partnerships and Disasters: Bahaya fatal terkait kerja sama/partner yang salah, investasi bodong.",
+    "27": "The Scepter: Otoritas, keberanian, kekuatan pikiran. Sangat produktif, intelektual tinggi.",
+    "28": "The Trusting Lamb: Sukses, tapi bisa runtuh jika mudah percaya orang. Harus ekstra waspada dalam kompetisi hukum/bisnis.",
+    "29": "Grace Under Pressure: Mengandung penipuan dari orang terdekat. Sering merasa terisolasi, banyak tantangan batin.",
+    "30": "The Loner: Dedikasi tinggi pada satu bidang, tapi cenderung hidup mandiri dan menarik diri dari hal materialistik.",
+    "31": "The Recluse: Mirip 30, sangat intelektual namun merasa sendirian di tengah keramaian. Penuh teka-teki.",
+    "32": "Communication and Charisma: Keberuntungan melalui komunikasi, pidato, massa. Rencana sangat mulus jika didorong dengan tekad.",
+    "33": "The Ultimate Fortune: Sama dengan 24, penuh berkat, asmara dan materi (juga Master Number di Pythagorean)."
+  },
+  "nakshatras": {
+    "Ashwini": {
+      "ruler": "Ketu",
+      "deity": "Ashwini Kumaras (Tabib Para Dewa)",
+      "narrative": "Ashwini adalah Nakshatra pertama, melambangkan kecepatan, pionir, dan penyembuhan. Individu yang lahir di bawah bintang ini biasanya memiliki semangat 'pemulai' yang luar biasa, sangat energik, dan ingin segalanya cepat selesai. Terkadang mereka tergesa-gesa. Mereka memiliki ketertarikan alami pada bidang penyembuhan, olahraga, dan petualangan.",
+      "career": "Dokter, atlet, pengusaha, pelatih kebugaran, mekanik."
+    },
+    "Bharani": {
+      "ruler": "Venus",
+      "deity": "Yama (Dewa Kematian & Keadilan)",
+      "narrative": "Bharani melambangkan ketahanan luar biasa dan proses 'kematian dan kelahiran kembali' (transformasi). Mereka memiliki beban tanggung jawab yang berat di pundak sejak muda. Meskipun tampak keras di luar, mereka memiliki apresiasi tinggi terhadap seni dan keindahan berkat Venus. Karakter mereka sangat disiplin dan pantang menyerah.",
+      "career": "Hakim, seniman, psikolog, dokter kandungan, ahli forensik."
+    },
+    "Krittika": {
+      "ruler": "Matahari",
+      "deity": "Agni (Dewa Api)",
+      "narrative": "Dilambangkan dengan pisau atau kapak pemotong, Krittika memotong segala ilusi untuk menemukan kebenaran. Mereka sangat protektif, berapi-api, kritis, tajam dalam berbicara, dan memiliki ego yang sehat. Meskipun di luar tampak tajam, mereka punya hati keibuan yang sangat peduli pada kelompoknya.",
+      "career": "Kritikus, pengacara, tentara, pemangku, pemimpin proyek."
+    },
+    "Rohini": {
+      "ruler": "Bulan",
+      "deity": "Brahma (Sang Pencipta)",
+      "narrative": "Rohini adalah bintang kesayangan Bulan. Ini adalah Nakshatra yang melambangkan pertumbuhan material, kecantikan pesona magnetis, dan kemakmuran. Mereka yang lahir di sini sangat artistik, sensual, romantis, dan memiliki selera tinggi terhadap barang mewah. Bahaya utamanya adalah rasa cemburu dan sifat posesif.",
+      "career": "Model, desainer, musisi, pengusaha pertanian/real estate, aktor."
+    },
+    "Magha": {
+      "ruler": "Ketu",
+      "deity": "Pitris (Roh Leluhur)",
+      "narrative": "Magha melambangkan Singgasana Kerajaan. Individu ini memiliki ikatan kuat dengan garis keturunan (leluhur) dan tradisi. Mereka membawa aura raja, kebanggaan, dan kehormatan. Sering kali mereka mencapai posisi kekuasaan tinggi, namun ujian utama mereka adalah tidak terjebak dalam kesombongan ego (karena Ketu mendambakan kerohanian).",
+      "career": "Politisi, sejarawan, eksekutif tingkat atas, manajer warisan, hakim."
+    },
+    "Purva Phalguni": {
+      "ruler": "Venus",
+      "deity": "Bhaga (Dewa Kekayaan Kesenangan)",
+      "narrative": "Ini adalah bintang pesta, rekreasi, dan relaksasi setelah kerja keras. Mereka sangat menikmati hidup, memiliki daya tarik yang kuat, sangat romantis dan magnetis. Mereka mencari hubungan asmara yang mendalam. Sisi gelapnya adalah mereka bisa sangat malas, menghindari masalah, atau terlalu tenggelam dalam kesenangan duniawi.",
+      "career": "Entertainer, event organizer, pekerja seni, penasihat pernikahan, musisi."
+    },
+    "Hasta": {
+      "ruler": "Bulan",
+      "deity": "Savitar (Dewa Matahari Fajar)",
+      "narrative": "Hasta berarti 'Tangan'. Orang-orang ini memiliki keajaiban di tangannya—mulai dari melukis, pijat, menulis, hingga sihir/sulap. Mereka sangat terampil, presisi, praktis, dan sering memiliki rutinitas harian yang padat. Mereka pekerja keras dan detail, namun pikirannya sering cemas (karena Bulan cepat berubah).",
+      "career": "Terapis fisik, seniman, penulis, pesulap, tukang kayu/pengrajin presisi."
+    },
+    "Jyeshtha": {
+      "ruler": "Merkurius",
+      "deity": "Indra (Raja Dewa)",
+      "narrative": "Jyeshtha berarti 'Yang Tertua' atau 'Paling Senior'. Mereka yang lahir di bawahnya merasa memiliki otoritas atau merasa paling dewasa di keluarganya, bahkan jika mereka anak bungsu. Mereka protektif, pintar, dan pandai dalam berdebat. Masalah terbesar mereka adalah merasa tidak dihargai (inferiority complex tersembunyi).",
+      "career": "Detektif, manajemen senior, politikus, jurnalis investigasi."
+    },
+    "Mula": {
+      "ruler": "Ketu",
+      "deity": "Nirriti (Dewi Kehancuran/Akar)",
+      "narrative": "Mula berarti 'Akar'. Mereka memiliki dorongan yang kuat untuk menggali akar kebenaran, misteri, dan penelitian. Nakshatra ini berkaitan dengan pencabutan apa yang tidak lagi berguna agar pertumbuhan baru bisa terjadi. Kehidupan mereka sering diwarnai krisis atau kerugian tiba-tiba yang bertujuan untuk kebangkitan spiritual.",
+      "career": "Peneliti medis, filosof, penyembuh alternatif, ahli tambang, detektif."
+    },
+    "Pushya": {
+      "ruler": "Saturnus",
+      "deity": "Brihaspati (Guru para Dewa)",
+      "narrative": "Pushya adalah 'Pemberi Nutrisi', sering dianggap sebagai Nakshatra paling diberkati/menguntungkan. Orang ini memiliki cinta tanpa pamrih, peduli pada kebaikan masyarakat, dan sangat spiritual-religius. Mereka adalah penasihat alami yang bijaksana dan sering dicari nasihatnya. Namun mereka bisa kaku dalam kepercayaan mereka.",
+      "career": "Guru spiritual, konselor, pendeta, pekerja sosial, perawat."
+    }
   }
 }

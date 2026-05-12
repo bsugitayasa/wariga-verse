@@ -1,78 +1,1984 @@
 [
-  {"name":"Dharma","gender":"male","origin":"Sanskrit","meaning":"Kebenaran, kebajikan, tugas suci","syllables":["Dhar","ma"],"element":"fire","nawaSangaAffinity":"east","tags":["spiritual","virtue"]},
-  {"name":"Arya","gender":"male","origin":"Sanskrit","meaning":"Mulia, terhormat, ksatria","syllables":["Ar","ya"],"element":"fire","nawaSangaAffinity":"east","tags":["noble","leadership"]},
-  {"name":"Krisna","gender":"male","origin":"Sanskrit","meaning":"Yang Maha Menarik, bijaksana","syllables":["Kris","na"],"element":"water","nawaSangaAffinity":"north","tags":["divine","spiritual"]},
-  {"name":"Rama","gender":"male","origin":"Sanskrit","meaning":"Menyenangkan, mulia, teladan","syllables":["Ra","ma"],"element":"fire","nawaSangaAffinity":"south","tags":["noble","heroic"]},
-  {"name":"Wisnu","gender":"male","origin":"Sanskrit","meaning":"Pemelihara alam semesta","syllables":["Wis","nu"],"element":"water","nawaSangaAffinity":"north","tags":["divine","protector"]},
-  {"name":"Surya","gender":"male","origin":"Sanskrit","meaning":"Matahari, cahaya, sumber energi","syllables":["Sur","ya"],"element":"fire","nawaSangaAffinity":"east","tags":["light","energy"]},
-  {"name":"Bayu","gender":"male","origin":"Sanskrit","meaning":"Angin, kekuatan hidup, prana","syllables":["Ba","yu"],"element":"air","nawaSangaAffinity":"northwest","tags":["freedom","energy"]},
-  {"name":"Agni","gender":"male","origin":"Sanskrit","meaning":"Api suci, semangat membara","syllables":["Ag","ni"],"element":"fire","nawaSangaAffinity":"south","tags":["energy","passion"]},
-  {"name":"Indra","gender":"male","origin":"Sanskrit","meaning":"Raja para dewa, pemimpin","syllables":["In","dra"],"element":"air","nawaSangaAffinity":"east","tags":["leadership","power"]},
-  {"name":"Satya","gender":"male","origin":"Sanskrit","meaning":"Kebenaran sejati, kesetiaan","syllables":["Sat","ya"],"element":"fire","nawaSangaAffinity":"east","tags":["truth","virtue"]},
-  {"name":"Wira","gender":"male","origin":"Sanskrit","meaning":"Pahlawan, pemberani, ksatria","syllables":["Wi","ra"],"element":"fire","nawaSangaAffinity":"south","tags":["heroic","brave"]},
-  {"name":"Dewa","gender":"male","origin":"Sanskrit","meaning":"Dewa, cahaya ilahi, agung","syllables":["De","wa"],"element":"air","nawaSangaAffinity":"center","tags":["divine","light"]},
-  {"name":"Yoga","gender":"male","origin":"Sanskrit","meaning":"Penyatuan, disiplin diri","syllables":["Yo","ga"],"element":"earth","nawaSangaAffinity":"center","tags":["spiritual","unity"]},
-  {"name":"Widya","gender":"female","origin":"Sanskrit","meaning":"Ilmu pengetahuan, kebijaksanaan","syllables":["Wid","ya"],"element":"air","nawaSangaAffinity":"east","tags":["wisdom","knowledge"]},
-  {"name":"Saraswati","gender":"female","origin":"Sanskrit","meaning":"Dewi ilmu pengetahuan dan seni","syllables":["Sa","ras","wa","ti"],"element":"water","nawaSangaAffinity":"east","tags":["wisdom","divine"]},
-  {"name":"Lakshmi","gender":"female","origin":"Sanskrit","meaning":"Dewi kemakmuran dan keberuntungan","syllables":["Lak","shmi"],"element":"earth","nawaSangaAffinity":"west","tags":["prosperity","divine"]},
-  {"name":"Dewi","gender":"female","origin":"Sanskrit","meaning":"Dewi, bidadari, cahaya","syllables":["De","wi"],"element":"air","nawaSangaAffinity":"center","tags":["divine","beauty"]},
-  {"name":"Shanti","gender":"female","origin":"Sanskrit","meaning":"Kedamaian batin, ketenangan","syllables":["Shan","ti"],"element":"water","nawaSangaAffinity":"north","tags":["peace","calm"]},
-  {"name":"Parvati","gender":"female","origin":"Sanskrit","meaning":"Putri gunung, keteguhan","syllables":["Par","va","ti"],"element":"earth","nawaSangaAffinity":"northeast","tags":["divine","strength"]},
-  {"name":"Gayatri","gender":"female","origin":"Sanskrit","meaning":"Mantra suci, ibu Weda","syllables":["Ga","ya","tri"],"element":"fire","nawaSangaAffinity":"east","tags":["spiritual","sacred"]},
-  {"name":"Gita","gender":"female","origin":"Sanskrit","meaning":"Lagu suci, nyanyian","syllables":["Gi","ta"],"element":"air","nawaSangaAffinity":"center","tags":["spiritual","art"]},
-  {"name":"Ananda","gender":"male","origin":"Sanskrit","meaning":"Kebahagiaan tertinggi, sukacita","syllables":["A","nan","da"],"element":"air","nawaSangaAffinity":"center","tags":["joy","spiritual"]},
-  {"name":"Aditya","gender":"male","origin":"Sanskrit","meaning":"Putra matahari, terang","syllables":["A","dit","ya"],"element":"fire","nawaSangaAffinity":"east","tags":["light","divine"]},
-  {"name":"Pradnya","gender":"female","origin":"Sanskrit","meaning":"Kebijaksanaan tertinggi, intuisi","syllables":["Prad","nya"],"element":"air","nawaSangaAffinity":"east","tags":["wisdom","spiritual"]},
-  {"name":"Chandra","gender":"male","origin":"Sanskrit","meaning":"Bulan, cahaya malam yang lembut","syllables":["Chan","dra"],"element":"water","nawaSangaAffinity":"north","tags":["calm","beauty"]},
-  {"name":"Ratih","gender":"female","origin":"Bali","meaning":"Dewi cinta dan keindahan","syllables":["Ra","tih"],"element":"water","nawaSangaAffinity":"west","tags":["love","beauty"]},
-  {"name":"Sari","gender":"female","origin":"Bali","meaning":"Bunga, inti sari keindahan","syllables":["Sa","ri"],"element":"earth","nawaSangaAffinity":"west","tags":["beauty","nature"]},
-  {"name":"Dananjaya","gender":"male","origin":"Sanskrit","meaning":"Penakluk kekayaan, Arjuna","syllables":["Da","nan","ja","ya"],"element":"fire","nawaSangaAffinity":"south","tags":["victory","heroic"]},
-  {"name":"Dirgantara","gender":"male","origin":"Sanskrit","meaning":"Penjelajah angkasa, luas","syllables":["Dir","gan","ta","ra"],"element":"air","nawaSangaAffinity":"northwest","tags":["freedom","vast"]},
-  {"name":"Mahottama","gender":"male","origin":"Sanskrit","meaning":"Terbaik, paling utama","syllables":["Ma","hot","ta","ma"],"element":"fire","nawaSangaAffinity":"center","tags":["supreme","excellence"]},
-  {"name":"Abhinaya","gender":"male","origin":"Sanskrit","meaning":"Ekspresi, semangat, gerakan","syllables":["Ab","hi","na","ya"],"element":"fire","nawaSangaAffinity":"east","tags":["art","energy"]},
-  {"name":"Baskara","gender":"male","origin":"Sanskrit","meaning":"Pemberi cahaya, matahari","syllables":["Bas","ka","ra"],"element":"fire","nawaSangaAffinity":"east","tags":["light","energy"]},
-  {"name":"Ganesha","gender":"male","origin":"Sanskrit","meaning":"Pemimpin pasukan dewa, bijak","syllables":["Ga","ne","sha"],"element":"earth","nawaSangaAffinity":"center","tags":["wisdom","divine"]},
-  {"name":"Mahendra","gender":"male","origin":"Sanskrit","meaning":"Indra yang agung, pemimpin","syllables":["Ma","hen","dra"],"element":"air","nawaSangaAffinity":"east","tags":["power","leadership"]},
-  {"name":"Wedha","gender":"male","origin":"Sanskrit","meaning":"Pengetahuan suci, kitab","syllables":["We","dha"],"element":"air","nawaSangaAffinity":"east","tags":["knowledge","sacred"]},
-  {"name":"Arjuna","gender":"male","origin":"Sanskrit","meaning":"Putih, bersih, pahlawan panah","syllables":["Ar","ju","na"],"element":"air","nawaSangaAffinity":"east","tags":["heroic","noble"]},
-  {"name":"Bhimasena","gender":"male","origin":"Sanskrit","meaning":"Panglima yang dahsyat","syllables":["Bhi","ma","se","na"],"element":"earth","nawaSangaAffinity":"south","tags":["strength","heroic"]},
-  {"name":"Nakula","gender":"male","origin":"Sanskrit","meaning":"Warna murni, setia","syllables":["Na","ku","la"],"element":"water","nawaSangaAffinity":"west","tags":["loyalty","heroic"]},
-  {"name":"Sadewa","gender":"male","origin":"Sanskrit","meaning":"Dewa kebenaran, bijaksana","syllables":["Sa","de","wa"],"element":"air","nawaSangaAffinity":"center","tags":["truth","heroic"]},
-  {"name":"Yudistira","gender":"male","origin":"Sanskrit","meaning":"Teguh dalam pertempuran","syllables":["Yu","dis","ti","ra"],"element":"earth","nawaSangaAffinity":"north","tags":["virtue","heroic"]},
-  {"name":"Paramitha","gender":"female","origin":"Sanskrit","meaning":"Kesempurnaan, kearifan","syllables":["Pa","ra","mi","tha"],"element":"air","nawaSangaAffinity":"center","tags":["perfection","virtue"]},
-  {"name":"Nirmala","gender":"female","origin":"Sanskrit","meaning":"Suci, tanpa noda, murni","syllables":["Nir","ma","la"],"element":"water","nawaSangaAffinity":"east","tags":["purity","sacred"]},
-  {"name":"Pratama","gender":"male","origin":"Sanskrit","meaning":"Yang paling utama","syllables":["Pra","ta","ma"],"element":"fire","nawaSangaAffinity":"east","tags":["first","excellence"]},
-  {"name":"Siddharta","gender":"male","origin":"Sanskrit","meaning":"Yang telah mencapai tujuannya","syllables":["Sid","dhar","ta"],"element":"air","nawaSangaAffinity":"center","tags":["achievement","spiritual"]},
-  {"name":"Waradana","gender":"male","origin":"Sanskrit","meaning":"Hadiah yang mulia","syllables":["Wa","ra","da","na"],"element":"fire","nawaSangaAffinity":"south","tags":["gift","noble"]},
-  {"name":"Maitri","gender":"female","origin":"Sanskrit","meaning":"Persahabatan, kasih sayang","syllables":["Mai","tri"],"element":"water","nawaSangaAffinity":"west","tags":["friendship","love"]},
-  {"name":"Sita","gender":"female","origin":"Sanskrit","meaning":"Garis suci, kesetiaan","syllables":["Si","ta"],"element":"earth","nawaSangaAffinity":"south","tags":["devotion","sacred"]},
-  {"name":"Anjani","gender":"female","origin":"Sanskrit","meaning":"Hadiah, anugerah ilahi","syllables":["An","ja","ni"],"element":"air","nawaSangaAffinity":"center","tags":["gift","divine"]},
-  {"name":"Laksmana","gender":"male","origin":"Sanskrit","meaning":"Beruntung, setia, mulia","syllables":["Lak","sma","na"],"element":"earth","nawaSangaAffinity":"west","tags":["noble","fortune"]},
-  {"name":"Darma","gender":"male","origin":"Bali","meaning":"Kebenaran, pengabdian","syllables":["Dar","ma"],"element":"fire","nawaSangaAffinity":"east","tags":["virtue","duty"]},
-  {"name":"Swari","gender":"female","origin":"Bali","meaning":"Suara merdu, indah, seni","syllables":["Swa","ri"],"element":"air","nawaSangaAffinity":"west","tags":["beauty","art"]},
-  {"name":"Kirana","gender":"female","origin":"Sanskrit","meaning":"Sinar cahaya, cantik","syllables":["Ki","ra","na"],"element":"fire","nawaSangaAffinity":"east","tags":["light","beauty"]},
-  {"name":"Sastra","gender":"male","origin":"Sanskrit","meaning":"Ilmu pengetahuan, kitab, teks","syllables":["Sas","tra"],"element":"air","nawaSangaAffinity":"east","tags":["knowledge","sacred"]},
-  {"name":"Natha","gender":"male","origin":"Sanskrit","meaning":"Pelindung, pemimpin, tuan","syllables":["Na","tha"],"element":"air","nawaSangaAffinity":"center","tags":["protector","leadership"]},
-  {"name":"Arta","gender":"male","origin":"Sanskrit","meaning":"Harta, kekayaan, makna","syllables":["Ar","ta"],"element":"earth","nawaSangaAffinity":"west","tags":["prosperity","meaning"]},
-  {"name":"Putra","gender":"male","origin":"Sanskrit","meaning":"Anak laki-laki, penerus","syllables":["Put","ra"],"element":"fire","nawaSangaAffinity":"east","tags":["son","traditional"]},
-  {"name":"Putri","gender":"female","origin":"Sanskrit","meaning":"Anak perempuan, putri","syllables":["Put","ri"],"element":"water","nawaSangaAffinity":"west","tags":["daughter","traditional"]},
-  {"name":"Wira","gender":"male","origin":"Sanskrit","meaning":"Berani, pahlawan","syllables":["Wi","ra"],"element":"fire","nawaSangaAffinity":"south","tags":["heroic","brave"]},
-  {"name":"Abimanyu","gender":"male","origin":"Sanskrit","meaning":"Gagah berani, putra Arjuna","syllables":["A","bi","man","yu"],"element":"fire","nawaSangaAffinity":"south","tags":["heroic","noble"]},
-  {"name":"Ghatotkacha","gender":"male","origin":"Sanskrit","meaning":"Kepala botak, perkasa","syllables":["Gha","tot","ka","cha"],"element":"earth","nawaSangaAffinity":"north","tags":["strength","heroic"]},
-  {"name":"Utari","gender":"female","origin":"Sanskrit","meaning":"Sangat tinggi, mulia","syllables":["U","ta","ri"],"element":"air","nawaSangaAffinity":"northeast","tags":["noble","beauty"]},
-  {"name":"Srikandi","gender":"female","origin":"Sanskrit","meaning":"Pahlawan wanita, berani","syllables":["Sri","kan","di"],"element":"fire","nawaSangaAffinity":"south","tags":["brave","heroic"]},
-  {"name":"Amrita","gender":"female","origin":"Sanskrit","meaning":"Keabadian, air kehidupan","syllables":["Am","ri","ta"],"element":"water","nawaSangaAffinity":"center","tags":["divine","eternal"]},
-  {"name":"Bhavana","gender":"female","origin":"Sanskrit","meaning":"Perasaan, penciptaan","syllables":["Bha","va","na"],"element":"air","nawaSangaAffinity":"northwest","tags":["emotion","spiritual"]},
-  {"name":"Veda","gender":"male","origin":"Sanskrit","meaning":"Pengetahuan tertinggi","syllables":["Ve","da"],"element":"air","nawaSangaAffinity":"east","tags":["knowledge","sacred"]},
-  {"name":"Yasa","gender":"male","origin":"Sanskrit","meaning":"Kehormatan, kemasyhuran","syllables":["Ya","sa"],"element":"fire","nawaSangaAffinity":"east","tags":["glory","fame"]},
-  {"name":"Siddham","gender":"male","origin":"Sanskrit","meaning":"Sempurna, terbukti","syllables":["Sid","dham"],"element":"air","nawaSangaAffinity":"center","tags":["perfection","virtue"]},
-  {"name":"Kaviraj","gender":"male","origin":"Sanskrit","meaning":"Raja para penyair","syllables":["Ka","vi","raj"],"element":"air","nawaSangaAffinity":"west","tags":["art","noble"]},
-  {"name":"Lavanya","gender":"female","origin":"Sanskrit","meaning":"Keanggunan, kecantikan","syllables":["La","van","ya"],"element":"water","nawaSangaAffinity":"north","tags":["beauty","grace"]},
-  {"name":"Mayura","gender":"female","origin":"Sanskrit","meaning":"Burung merak, indah","syllables":["Ma","yu","ra"],"element":"air","nawaSangaAffinity":"south","tags":["beauty","nature"]},
-  {"name":"Tanmaya","gender":"male","origin":"Sanskrit","meaning":"Penuh penyerapan batin","syllables":["Tan","ma","ya"],"element":"earth","nawaSangaAffinity":"center","tags":["spiritual","focus"]},
-  {"name":"Ishara","gender":"female","origin":"Sanskrit","meaning":"Petunjuk, tanda ilahi","syllables":["I","sha","ra"],"element":"air","nawaSangaAffinity":"northeast","tags":["divine","sign"]},
-  {"name":"Vaikuntha","gender":"male","origin":"Sanskrit","meaning":"Tempat tanpa kecemasan","syllables":["Vai","kun","tha"],"element":"water","nawaSangaAffinity":"north","tags":["divine","peace"]},
-  {"name":"Arundhati","gender":"female","origin":"Sanskrit","meaning":"Bintang fajar, kesetiaan","syllables":["A","run","dha","ti"],"element":"fire","nawaSangaAffinity":"east","tags":["star","devotion"]},
-  {"name":"Advaya","gender":"male","origin":"Sanskrit","meaning":"Tak mendua, unik","syllables":["Ad","va","ya"],"element":"air","nawaSangaAffinity":"center","tags":["unity","unique"]},
-  {"name":"Chinmaya","gender":"male","origin":"Sanskrit","meaning":"Penuh dengan kesadaran","syllables":["Chin","ma","ya"],"element":"air","nawaSangaAffinity":"east","tags":["wisdom","spiritual"]}
+  {
+    "name": "Dharma",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Kebenaran, kebajikan, tugas suci",
+    "syllables": [
+      "Dhar",
+      "ma"
+    ],
+    "element": "water",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "spiritual",
+      "virtue"
+    ]
+  },
+  {
+    "name": "Arya",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Mulia, terhormat, ksatria",
+    "syllables": [
+      "Ar",
+      "ya"
+    ],
+    "element": "water",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "noble",
+      "leadership"
+    ]
+  },
+  {
+    "name": "Krisna",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Yang Maha Menarik, bijaksana",
+    "syllables": [
+      "Kris",
+      "na"
+    ],
+    "element": "earth",
+    "nawaSangaAffinity": "north",
+    "tags": [
+      "divine",
+      "spiritual"
+    ]
+  },
+  {
+    "name": "Rama",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Menyenangkan, mulia, teladan",
+    "syllables": [
+      "Ra",
+      "ma"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "south",
+    "tags": [
+      "noble",
+      "heroic"
+    ]
+  },
+  {
+    "name": "Wisnu",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Pemelihara alam semesta",
+    "syllables": [
+      "Wis",
+      "nu"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "north",
+    "tags": [
+      "divine",
+      "protector"
+    ]
+  },
+  {
+    "name": "Surya",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Matahari, cahaya, sumber energi",
+    "syllables": [
+      "Sur",
+      "ya"
+    ],
+    "element": "fire",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "light",
+      "energy"
+    ]
+  },
+  {
+    "name": "Bayu",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Angin, kekuatan hidup, prana",
+    "syllables": [
+      "Ba",
+      "yu"
+    ],
+    "element": "earth",
+    "nawaSangaAffinity": "northwest",
+    "tags": [
+      "freedom",
+      "energy"
+    ]
+  },
+  {
+    "name": "Agni",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Api suci, semangat membara",
+    "syllables": [
+      "Ag",
+      "ni"
+    ],
+    "element": "water",
+    "nawaSangaAffinity": "south",
+    "tags": [
+      "energy",
+      "passion"
+    ]
+  },
+  {
+    "name": "Indra",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Raja para dewa, pemimpin",
+    "syllables": [
+      "In",
+      "dra"
+    ],
+    "element": "earth",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "leadership",
+      "power"
+    ]
+  },
+  {
+    "name": "Satya",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Kebenaran sejati, kesetiaan",
+    "syllables": [
+      "Sat",
+      "ya"
+    ],
+    "element": "fire",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "truth",
+      "virtue"
+    ]
+  },
+  {
+    "name": "Wira",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Pahlawan, pemberani, ksatria",
+    "syllables": [
+      "Wi",
+      "ra"
+    ],
+    "element": "metal",
+    "nawaSangaAffinity": "south",
+    "tags": [
+      "heroic",
+      "brave"
+    ]
+  },
+  {
+    "name": "Dewa",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Dewa, cahaya ilahi, agung",
+    "syllables": [
+      "De",
+      "wa"
+    ],
+    "element": "fire",
+    "nawaSangaAffinity": "center",
+    "tags": [
+      "divine",
+      "light"
+    ]
+  },
+  {
+    "name": "Yoga",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Penyatuan, disiplin diri",
+    "syllables": [
+      "Yo",
+      "ga"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "center",
+    "tags": [
+      "spiritual",
+      "unity"
+    ]
+  },
+  {
+    "name": "Widya",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Ilmu pengetahuan, kebijaksanaan",
+    "syllables": [
+      "Wid",
+      "ya"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "wisdom",
+      "knowledge"
+    ]
+  },
+  {
+    "name": "Saraswati",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Dewi ilmu pengetahuan dan seni",
+    "syllables": [
+      "Sa",
+      "ras",
+      "wa",
+      "ti"
+    ],
+    "element": "fire",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "wisdom",
+      "divine"
+    ]
+  },
+  {
+    "name": "Lakshmi",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Dewi kemakmuran dan keberuntungan",
+    "syllables": [
+      "Lak",
+      "shmi"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "west",
+    "tags": [
+      "prosperity",
+      "divine"
+    ]
+  },
+  {
+    "name": "Dewi",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Dewi, bidadari, cahaya",
+    "syllables": [
+      "De",
+      "wi"
+    ],
+    "element": "fire",
+    "nawaSangaAffinity": "center",
+    "tags": [
+      "divine",
+      "beauty"
+    ]
+  },
+  {
+    "name": "Shanti",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Kedamaian batin, ketenangan",
+    "syllables": [
+      "Shan",
+      "ti"
+    ],
+    "element": "fire",
+    "nawaSangaAffinity": "north",
+    "tags": [
+      "peace",
+      "calm"
+    ]
+  },
+  {
+    "name": "Parvati",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Putri gunung, keteguhan",
+    "syllables": [
+      "Par",
+      "va",
+      "ti"
+    ],
+    "element": "earth",
+    "nawaSangaAffinity": "northeast",
+    "tags": [
+      "divine",
+      "strength"
+    ]
+  },
+  {
+    "name": "Gayatri",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Mantra suci, ibu Weda",
+    "syllables": [
+      "Ga",
+      "ya",
+      "tri"
+    ],
+    "element": "water",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "spiritual",
+      "sacred"
+    ]
+  },
+  {
+    "name": "Gita",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Lagu suci, nyanyian",
+    "syllables": [
+      "Gi",
+      "ta"
+    ],
+    "element": "water",
+    "nawaSangaAffinity": "center",
+    "tags": [
+      "spiritual",
+      "art"
+    ]
+  },
+  {
+    "name": "Ananda",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Kebahagiaan tertinggi, sukacita",
+    "syllables": [
+      "A",
+      "nan",
+      "da"
+    ],
+    "element": "water",
+    "nawaSangaAffinity": "center",
+    "tags": [
+      "joy",
+      "spiritual"
+    ]
+  },
+  {
+    "name": "Aditya",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Putra matahari, terang",
+    "syllables": [
+      "A",
+      "dit",
+      "ya"
+    ],
+    "element": "fire",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "light",
+      "divine"
+    ]
+  },
+  {
+    "name": "Pradnya",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Kebijaksanaan tertinggi, intuisi",
+    "syllables": [
+      "Prad",
+      "nya"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "wisdom",
+      "spiritual"
+    ]
+  },
+  {
+    "name": "Chandra",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Bulan, cahaya malam yang lembut",
+    "syllables": [
+      "Chan",
+      "dra"
+    ],
+    "element": "fire",
+    "nawaSangaAffinity": "north",
+    "tags": [
+      "calm",
+      "beauty"
+    ]
+  },
+  {
+    "name": "Ratih",
+    "gender": "female",
+    "origin": "Bali",
+    "meaning": "Dewi cinta dan keindahan",
+    "syllables": [
+      "Ra",
+      "tih"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "west",
+    "tags": [
+      "love",
+      "beauty"
+    ]
+  },
+  {
+    "name": "Sari",
+    "gender": "female",
+    "origin": "Bali",
+    "meaning": "Bunga, inti sari keindahan",
+    "syllables": [
+      "Sa",
+      "ri"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "west",
+    "tags": [
+      "beauty",
+      "nature"
+    ]
+  },
+  {
+    "name": "Dananjaya",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Penakluk kekayaan, Arjuna",
+    "syllables": [
+      "Da",
+      "nan",
+      "ja",
+      "ya"
+    ],
+    "element": "earth",
+    "nawaSangaAffinity": "south",
+    "tags": [
+      "victory",
+      "heroic"
+    ]
+  },
+  {
+    "name": "Dirgantara",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Penjelajah angkasa, luas",
+    "syllables": [
+      "Dir",
+      "gan",
+      "ta",
+      "ra"
+    ],
+    "element": "earth",
+    "nawaSangaAffinity": "northwest",
+    "tags": [
+      "freedom",
+      "vast"
+    ]
+  },
+  {
+    "name": "Mahottama",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Terbaik, paling utama",
+    "syllables": [
+      "Ma",
+      "hot",
+      "ta",
+      "ma"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "center",
+    "tags": [
+      "supreme",
+      "excellence"
+    ]
+  },
+  {
+    "name": "Abhinaya",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Ekspresi, semangat, gerakan",
+    "syllables": [
+      "Ab",
+      "hi",
+      "na",
+      "ya"
+    ],
+    "element": "fire",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "art",
+      "energy"
+    ]
+  },
+  {
+    "name": "Baskara",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Pemberi cahaya, matahari",
+    "syllables": [
+      "Bas",
+      "ka",
+      "ra"
+    ],
+    "element": "fire",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "light",
+      "energy"
+    ]
+  },
+  {
+    "name": "Ganesha",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Pemimpin pasukan dewa, bijak",
+    "syllables": [
+      "Ga",
+      "ne",
+      "sha"
+    ],
+    "element": "earth",
+    "nawaSangaAffinity": "center",
+    "tags": [
+      "wisdom",
+      "divine"
+    ]
+  },
+  {
+    "name": "Mahendra",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Indra yang agung, pemimpin",
+    "syllables": [
+      "Ma",
+      "hen",
+      "dra"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "power",
+      "leadership"
+    ]
+  },
+  {
+    "name": "Wedha",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Pengetahuan suci, kitab",
+    "syllables": [
+      "We",
+      "dha"
+    ],
+    "element": "water",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "knowledge",
+      "sacred"
+    ]
+  },
+  {
+    "name": "Arjuna",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Putih, bersih, pahlawan panah",
+    "syllables": [
+      "Ar",
+      "ju",
+      "na"
+    ],
+    "element": "metal",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "heroic",
+      "noble"
+    ]
+  },
+  {
+    "name": "Bhimasena",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Panglima yang dahsyat",
+    "syllables": [
+      "Bhi",
+      "ma",
+      "se",
+      "na"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "south",
+    "tags": [
+      "strength",
+      "heroic"
+    ]
+  },
+  {
+    "name": "Nakula",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Warna murni, setia",
+    "syllables": [
+      "Na",
+      "ku",
+      "la"
+    ],
+    "element": "earth",
+    "nawaSangaAffinity": "west",
+    "tags": [
+      "loyalty",
+      "heroic"
+    ]
+  },
+  {
+    "name": "Sadewa",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Dewa kebenaran, bijaksana",
+    "syllables": [
+      "Sa",
+      "de",
+      "wa"
+    ],
+    "element": "fire",
+    "nawaSangaAffinity": "center",
+    "tags": [
+      "truth",
+      "heroic"
+    ]
+  },
+  {
+    "name": "Yudistira",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Teguh dalam pertempuran",
+    "syllables": [
+      "Yu",
+      "dis",
+      "ti",
+      "ra"
+    ],
+    "element": "earth",
+    "nawaSangaAffinity": "north",
+    "tags": [
+      "virtue",
+      "heroic"
+    ]
+  },
+  {
+    "name": "Paramitha",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Kesempurnaan, kearifan",
+    "syllables": [
+      "Pa",
+      "ra",
+      "mi",
+      "tha"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "center",
+    "tags": [
+      "perfection",
+      "virtue"
+    ]
+  },
+  {
+    "name": "Nirmala",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Suci, tanpa noda, murni",
+    "syllables": [
+      "Nir",
+      "ma",
+      "la"
+    ],
+    "element": "water",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "purity",
+      "sacred"
+    ]
+  },
+  {
+    "name": "Pratama",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Yang paling utama",
+    "syllables": [
+      "Pra",
+      "ta",
+      "ma"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "first",
+      "excellence"
+    ]
+  },
+  {
+    "name": "Siddharta",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Yang telah mencapai tujuannya",
+    "syllables": [
+      "Sid",
+      "dhar",
+      "ta"
+    ],
+    "element": "fire",
+    "nawaSangaAffinity": "center",
+    "tags": [
+      "achievement",
+      "spiritual"
+    ]
+  },
+  {
+    "name": "Waradana",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Hadiah yang mulia",
+    "syllables": [
+      "Wa",
+      "ra",
+      "da",
+      "na"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "south",
+    "tags": [
+      "gift",
+      "noble"
+    ]
+  },
+  {
+    "name": "Maitri",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Persahabatan, kasih sayang",
+    "syllables": [
+      "Mai",
+      "tri"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "west",
+    "tags": [
+      "friendship",
+      "love"
+    ]
+  },
+  {
+    "name": "Sita",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Garis suci, kesetiaan",
+    "syllables": [
+      "Si",
+      "ta"
+    ],
+    "element": "water",
+    "nawaSangaAffinity": "south",
+    "tags": [
+      "devotion",
+      "sacred"
+    ]
+  },
+  {
+    "name": "Anjani",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Hadiah, anugerah ilahi",
+    "syllables": [
+      "An",
+      "ja",
+      "ni"
+    ],
+    "element": "water",
+    "nawaSangaAffinity": "center",
+    "tags": [
+      "gift",
+      "divine"
+    ]
+  },
+  {
+    "name": "Laksmana",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Beruntung, setia, mulia",
+    "syllables": [
+      "Lak",
+      "sma",
+      "na"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "west",
+    "tags": [
+      "noble",
+      "fortune"
+    ]
+  },
+  {
+    "name": "Darma",
+    "gender": "male",
+    "origin": "Bali",
+    "meaning": "Kebenaran, pengabdian",
+    "syllables": [
+      "Dar",
+      "ma"
+    ],
+    "element": "earth",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "virtue",
+      "duty"
+    ]
+  },
+  {
+    "name": "Swari",
+    "gender": "female",
+    "origin": "Bali",
+    "meaning": "Suara merdu, indah, seni",
+    "syllables": [
+      "Swa",
+      "ri"
+    ],
+    "element": "fire",
+    "nawaSangaAffinity": "west",
+    "tags": [
+      "beauty",
+      "art"
+    ]
+  },
+  {
+    "name": "Kirana",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Sinar cahaya, cantik",
+    "syllables": [
+      "Ki",
+      "ra",
+      "na"
+    ],
+    "element": "fire",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "light",
+      "beauty"
+    ]
+  },
+  {
+    "name": "Sastra",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Ilmu pengetahuan, kitab, teks",
+    "syllables": [
+      "Sas",
+      "tra"
+    ],
+    "element": "fire",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "knowledge",
+      "sacred"
+    ]
+  },
+  {
+    "name": "Natha",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Pelindung, pemimpin, tuan",
+    "syllables": [
+      "Na",
+      "tha"
+    ],
+    "element": "earth",
+    "nawaSangaAffinity": "center",
+    "tags": [
+      "protector",
+      "leadership"
+    ]
+  },
+  {
+    "name": "Arta",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Harta, kekayaan, makna",
+    "syllables": [
+      "Ar",
+      "ta"
+    ],
+    "element": "water",
+    "nawaSangaAffinity": "west",
+    "tags": [
+      "prosperity",
+      "meaning"
+    ]
+  },
+  {
+    "name": "Putra",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Anak laki-laki, penerus",
+    "syllables": [
+      "Put",
+      "ra"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "son",
+      "traditional"
+    ]
+  },
+  {
+    "name": "Putri",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Anak perempuan, putri",
+    "syllables": [
+      "Put",
+      "ri"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "west",
+    "tags": [
+      "daughter",
+      "traditional"
+    ]
+  },
+  {
+    "name": "Wira",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Berani, pahlawan",
+    "syllables": [
+      "Wi",
+      "ra"
+    ],
+    "element": "metal",
+    "nawaSangaAffinity": "south",
+    "tags": [
+      "heroic",
+      "brave"
+    ]
+  },
+  {
+    "name": "Abimanyu",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Gagah berani, putra Arjuna",
+    "syllables": [
+      "A",
+      "bi",
+      "man",
+      "yu"
+    ],
+    "element": "metal",
+    "nawaSangaAffinity": "south",
+    "tags": [
+      "heroic",
+      "noble"
+    ]
+  },
+  {
+    "name": "Ghatotkacha",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Kepala botak, perkasa",
+    "syllables": [
+      "Gha",
+      "tot",
+      "ka",
+      "cha"
+    ],
+    "element": "earth",
+    "nawaSangaAffinity": "north",
+    "tags": [
+      "strength",
+      "heroic"
+    ]
+  },
+  {
+    "name": "Utari",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Sangat tinggi, mulia",
+    "syllables": [
+      "U",
+      "ta",
+      "ri"
+    ],
+    "element": "water",
+    "nawaSangaAffinity": "northeast",
+    "tags": [
+      "noble",
+      "beauty"
+    ]
+  },
+  {
+    "name": "Srikandi",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Pahlawan wanita, berani",
+    "syllables": [
+      "Sri",
+      "kan",
+      "di"
+    ],
+    "element": "metal",
+    "nawaSangaAffinity": "south",
+    "tags": [
+      "brave",
+      "heroic"
+    ]
+  },
+  {
+    "name": "Amrita",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Keabadian, air kehidupan",
+    "syllables": [
+      "Am",
+      "ri",
+      "ta"
+    ],
+    "element": "water",
+    "nawaSangaAffinity": "center",
+    "tags": [
+      "divine",
+      "eternal"
+    ]
+  },
+  {
+    "name": "Bhavana",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Perasaan, penciptaan",
+    "syllables": [
+      "Bha",
+      "va",
+      "na"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "northwest",
+    "tags": [
+      "emotion",
+      "spiritual"
+    ]
+  },
+  {
+    "name": "Veda",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Pengetahuan tertinggi",
+    "syllables": [
+      "Ve",
+      "da"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "knowledge",
+      "sacred"
+    ]
+  },
+  {
+    "name": "Yasa",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Kehormatan, kemasyhuran",
+    "syllables": [
+      "Ya",
+      "sa"
+    ],
+    "element": "metal",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "glory",
+      "fame"
+    ]
+  },
+  {
+    "name": "Siddham",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Sempurna, terbukti",
+    "syllables": [
+      "Sid",
+      "dham"
+    ],
+    "element": "fire",
+    "nawaSangaAffinity": "center",
+    "tags": [
+      "perfection",
+      "virtue"
+    ]
+  },
+  {
+    "name": "Kaviraj",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Raja para penyair",
+    "syllables": [
+      "Ka",
+      "vi",
+      "raj"
+    ],
+    "element": "water",
+    "nawaSangaAffinity": "west",
+    "tags": [
+      "art",
+      "noble"
+    ]
+  },
+  {
+    "name": "Lavanya",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Keanggunan, kecantikan",
+    "syllables": [
+      "La",
+      "van",
+      "ya"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "north",
+    "tags": [
+      "beauty",
+      "grace"
+    ]
+  },
+  {
+    "name": "Mayura",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Burung merak, indah",
+    "syllables": [
+      "Ma",
+      "yu",
+      "ra"
+    ],
+    "element": "wood",
+    "nawaSangaAffinity": "south",
+    "tags": [
+      "beauty",
+      "nature"
+    ]
+  },
+  {
+    "name": "Tanmaya",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Penuh penyerapan batin",
+    "syllables": [
+      "Tan",
+      "ma",
+      "ya"
+    ],
+    "element": "earth",
+    "nawaSangaAffinity": "center",
+    "tags": [
+      "spiritual",
+      "focus"
+    ]
+  },
+  {
+    "name": "Ishara",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Petunjuk, tanda ilahi",
+    "syllables": [
+      "I",
+      "sha",
+      "ra"
+    ],
+    "element": "water",
+    "nawaSangaAffinity": "northeast",
+    "tags": [
+      "divine",
+      "sign"
+    ]
+  },
+  {
+    "name": "Vaikuntha",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Tempat tanpa kecemasan",
+    "syllables": [
+      "Vai",
+      "kun",
+      "tha"
+    ],
+    "element": "metal",
+    "nawaSangaAffinity": "north",
+    "tags": [
+      "divine",
+      "peace"
+    ]
+  },
+  {
+    "name": "Arundhati",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "meaning": "Bintang fajar, kesetiaan",
+    "syllables": [
+      "A",
+      "run",
+      "dha",
+      "ti"
+    ],
+    "element": "water",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "star",
+      "devotion"
+    ]
+  },
+  {
+    "name": "Advaya",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Tak mendua, unik",
+    "syllables": [
+      "Ad",
+      "va",
+      "ya"
+    ],
+    "element": "water",
+    "nawaSangaAffinity": "center",
+    "tags": [
+      "unity",
+      "unique"
+    ]
+  },
+  {
+    "name": "Chinmaya",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "meaning": "Penuh dengan kesadaran",
+    "syllables": [
+      "Chin",
+      "ma",
+      "ya"
+    ],
+    "element": "earth",
+    "nawaSangaAffinity": "east",
+    "tags": [
+      "wisdom",
+      "spiritual"
+    ]
+  },
+  {
+    "name": "Aarav",
+    "meaning": "Damai, Bijaksana",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "water"
+  },
+  {
+    "name": "Diya",
+    "meaning": "Lampu, Cahaya",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Rudra",
+    "meaning": "Penghilang rasa sakit, Kuat",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Kavya",
+    "meaning": "Puisi yang indah",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Pranadipa",
+    "meaning": "Cahaya kehidupan, suci",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "water"
+  },
+  {
+    "name": "Candra",
+    "meaning": "Bulan, Cahaya",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Esha",
+    "meaning": "Keinginan, Hasrat murni",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "element": "water"
+  },
+  {
+    "name": "Hansa",
+    "meaning": "Angsa, Jiwa yang murni",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Jaya",
+    "meaning": "Kemenangan",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Kiran",
+    "meaning": "Sinar cahaya",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Laksmi",
+    "meaning": "Dewi kekayaan, Keberuntungan",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Nareswara",
+    "meaning": "Raja manusia, Pemimpin",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Ojas",
+    "meaning": "Kekuatan, Vitalitas",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Raka",
+    "meaning": "Bulan purnama",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Tirta",
+    "meaning": "Air suci",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "water"
+  },
+  {
+    "name": "Uma",
+    "meaning": "Ketenangan, Dewi Parvati",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "element": "water"
+  },
+  {
+    "name": "Vidya",
+    "meaning": "Ilmu pengetahuan, Kebijaksanaan",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Yudhistira",
+    "meaning": "Teguh dalam pertempuran",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Bhadra",
+    "meaning": "Mulia, Menguntungkan",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Sanjaya",
+    "meaning": "Berjaya, Menang",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Narottama",
+    "meaning": "Manusia terbaik",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Adnyana",
+    "meaning": "Pengetahuan bathin",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "water"
+  },
+  {
+    "name": "Uttama",
+    "meaning": "Terbaik, Utama",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "water"
+  },
+  {
+    "name": "Yasha",
+    "meaning": "Kemasyhuran, Kejayaan",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "metal"
+  },
+  {
+    "name": "Wirajaya",
+    "meaning": "Pahlawan yang menang",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Tejasa",
+    "meaning": "Cahaya, Kekuatan",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Raditya",
+    "meaning": "Matahari",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Kerta",
+    "meaning": "Pencapaian, Pekerjaan baik",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Gunarsa",
+    "meaning": "Sifat baik yang teguh",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Jayanta",
+    "meaning": "Pemenang",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Dhyana",
+    "meaning": "Meditasi, Pemusatan pikiran",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Tatwa",
+    "meaning": "Kebenaran esensial",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Vedanta",
+    "meaning": "Puncak pengetahuan weda",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Sanatana",
+    "meaning": "Abadi",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Vijayanta",
+    "meaning": "Selalu menang",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Wirya",
+    "meaning": "Keberanian, Kekuatan",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Samadhi",
+    "meaning": "Konsentrasi tertinggi",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Ratnakara",
+    "meaning": "Lautan permata",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "water"
+  },
+  {
+    "name": "Nandana",
+    "meaning": "Anak yang membawa kebahagiaan",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Jiwadhana",
+    "meaning": "Harta jiwa",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Vira",
+    "meaning": "Pahlawan",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Vibhava",
+    "meaning": "Kekayaan, Kemegahan",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Varada",
+    "meaning": "Pemberi anugerah",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Vibhu",
+    "meaning": "Mahakuasa, Tembus pandang",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Vasanta",
+    "meaning": "Musim semi",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Vikrama",
+    "meaning": "Keberanian, Langkah besar",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "metal"
+  },
+  {
+    "name": "Vikranta",
+    "meaning": "Berani melangkah",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "metal"
+  },
+  {
+    "name": "Vinaya",
+    "meaning": "Disiplin, Kesopanan",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Vibudha",
+    "meaning": "Sangat bijaksana",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Vibhuti",
+    "meaning": "Keagungan ilahi",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Ojasvi",
+    "meaning": "Penuh kekuatan bercahaya",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Karunika",
+    "meaning": "Penuh welas asih",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Karuna",
+    "meaning": "Welas asih",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Kanaka",
+    "meaning": "Emas",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "metal"
+  },
+  {
+    "name": "Jayendra",
+    "meaning": "Raja para pemenang",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Swadharma",
+    "meaning": "Kewajiban diri",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Santika",
+    "meaning": "Kedamaian",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Tejendra",
+    "meaning": "Raja yang bercahaya",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Sudharma",
+    "meaning": "Kebenaran yang baik",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Wiranata",
+    "meaning": "Pemimpin para pahlawan",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Prawira",
+    "meaning": "Sangat berani",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "metal"
+  },
+  {
+    "name": "Anugraha",
+    "meaning": "Pemberian ilahi, Berkat",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "water"
+  },
+  {
+    "name": "Sudhana",
+    "meaning": "Sangat kaya",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Narendra",
+    "meaning": "Raja manusia",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Satyendra",
+    "meaning": "Raja kebenaran",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Mahavira",
+    "meaning": "Pahlawan besar",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Mahatma",
+    "meaning": "Jiwa besar",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Satwika",
+    "meaning": "Murni, Kebaikan",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Jayasakti",
+    "meaning": "Kekuatan yang menang",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Rajaputra",
+    "meaning": "Anak raja",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Trisakti",
+    "meaning": "Tiga kekuatan ilahi",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Suryajaya",
+    "meaning": "Kejayaan matahari",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Parama",
+    "meaning": "Tertinggi, Utama",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Amerta",
+    "meaning": "Keabadian, Nektar",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "water"
+  },
+  {
+    "name": "Siddha",
+    "meaning": "Sempurna, Tercapai",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Prakarsa",
+    "meaning": "Prakarsa, Pemimpin",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Pradhana",
+    "meaning": "Yang utama, Penting",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Kertajaya",
+    "meaning": "Kejayaan pekerjaan",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Kuncara",
+    "meaning": "Terkenal",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Kusuma",
+    "meaning": "Bunga",
+    "gender": "female",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Jatmika",
+    "meaning": "Sopan santun",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Jagadhita",
+    "meaning": "Kesejahteraan dunia",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Prabawa",
+    "meaning": "Pengaruh, Kekuatan",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Diksa",
+    "meaning": "Inisiasi, Pemberkatan",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Nararya",
+    "meaning": "Orang mulia",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Viraja",
+    "meaning": "Bersih, Murni",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Sumantra",
+    "meaning": "Penasehat yang baik",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Jinartha",
+    "meaning": "Kekayaan rohani",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Suputra",
+    "meaning": "Anak laki-laki yang baik",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Pranawa",
+    "meaning": "Suara suci Om",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "water"
+  },
+  {
+    "name": "Swastika",
+    "meaning": "Keberuntungan, Keselamatan",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Mahayana",
+    "meaning": "Kendaraan besar",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Pranawijaya",
+    "meaning": "Kemenangan nafas kehidupan",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Satyajaya",
+    "meaning": "Kemenangan kebenaran",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Jnana",
+    "meaning": "Pengetahuan spiritual",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Subhaga",
+    "meaning": "Sangat beruntung",
+    "gender": "unisex",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Dirghayu",
+    "meaning": "Berumur panjang",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "earth"
+  },
+  {
+    "name": "Wanagiri",
+    "meaning": "Gunung hutan",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "wood"
+  },
+  {
+    "name": "Suarjana",
+    "meaning": "Orang yang baik",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Suartha",
+    "meaning": "Makna yang baik",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Swargajaya",
+    "meaning": "Kejayaan surga",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "fire"
+  },
+  {
+    "name": "Swardana",
+    "meaning": "Pemberian surga",
+    "gender": "male",
+    "origin": "Sanskrit",
+    "element": "fire"
+  }
 ]

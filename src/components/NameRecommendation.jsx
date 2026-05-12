@@ -10,7 +10,7 @@ function getScoreColor(score) {
 export default function NameRecommendation({ recommendations }) {
   const [originFilter, setOriginFilter] = useState('all');
   const [minScore, setMinScore] = useState(0);
-  const [showCount, setShowCount] = useState(5);
+  const [showCount, setShowCount] = useState(10);
 
   const origins = useMemo(() => {
     const set = new Set(recommendations.map(r => r.origin));
@@ -29,9 +29,9 @@ export default function NameRecommendation({ recommendations }) {
   return (
     <div id="name-recommendations">
       <div className="section-header" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-        <h2 className="section-title">✨ Rekomendasi Nama Terbaik</h2>
+        <h2 className="section-title">🤖 Rekomendasi Nama Pintar AI (Top 10)</h2>
         <p className="section-subtitle" style={{ maxWidth: '600px', margin: '0.5rem auto' }}>
-          Nama-nama berikut telah dianalisis berdasarkan keselarasan energi keluarga, silsilah (Purusha), dan tradisi Bali.
+          Ribuan kombinasi nama diuji dan difilter oleh Engine Metafisika. Berikut adalah kandidat terbaik yang selaras dengan energi keluarga dan tradisi.
         </p>
       </div>
 

@@ -20,6 +20,14 @@ export const NEPTU_NAMA_MAP = {
 
 const VOWELS = new Set(['A','E','I','O','U']);
 
+// Mapping for Planes of Expression
+const PLANES = {
+  physical: ['E','W','D','M','V'],
+  mental: ['A','J','S','G','P','Y','H','Q','Z'],
+  emotional: ['I','R','B','K','T','O','X','F'],
+  intuitive: ['C','L','U','N','W'] // W can overlap, but sticking to standard if possible
+};
+
 function reduceToSingle(num) {
   while (num > 9 && num !== 11 && num !== 22 && num !== 33) {
     num = String(num).split('').reduce((sum, d) => sum + parseInt(d), 0);
@@ -27,14 +35,23 @@ function reduceToSingle(num) {
   return num;
 }
 
+// Keep raw totals to detect Karmic Debts before reduction
+function getSumAndReduced(arr) {
+  const total = arr.reduce((s, v) => s + v, 0);
+  return { total, reduced: reduceToSingle(total) };
+}
+
 export function calculateLifePath(birthDate) {
   const d = birthDate.getDate();
   const m = birthDate.getMonth() + 1;
   const y = birthDate.getFullYear();
-  const dayReduced = reduceToSingle(d);
-  const monthReduced = reduceToSingle(m);
-  const yearReduced = reduceToSingle(String(y).split('').reduce((s, digit) => s + parseInt(digit), 0));
-  return reduceToSingle(dayReduced + monthReduced + yearReduced);
+  
+  const dRed = reduceToSingle(d);
+  const mRed = reduceToSingle(m);
+  const yRed = reduceToSingle(String(y).split('').reduce((s, digit) => s + parseInt(digit), 0));
+  
+  const total = dRed + mRed + yRed;
+  return { total, value: reduceToSingle(total) };
 }
 
 export function calculateDestiny(name, map = PYTHAGOREAN_MAP) {
@@ -48,14 +65,16 @@ export function calculateSoulUrge(name) {
   const vowelValues = name.toUpperCase().split('')
     .filter(c => VOWELS.has(c) && PYTHAGOREAN_MAP[c])
     .map(c => PYTHAGOREAN_MAP[c]);
-  return reduceToSingle(vowelValues.reduce((s, v) => s + v, 0) || 1);
+  const res = getSumAndReduced(vowelValues);
+  return { value: res.reduced || 1, total: res.total };
 }
 
 export function calculatePersonality(name) {
   const consonantValues = name.toUpperCase().split('')
     .filter(c => !VOWELS.has(c) && PYTHAGOREAN_MAP[c])
     .map(c => PYTHAGOREAN_MAP[c]);
-  return reduceToSingle(consonantValues.reduce((s, v) => s + v, 0) || 1);
+  const res = getSumAndReduced(consonantValues);
+  return { value: res.reduced || 1, total: res.total };
 }
 
 export function calculateKarmicLessons(name) {
@@ -68,9 +87,29 @@ export function calculateKarmicLessons(name) {
   return missing;
 }
 
-export function calculateKarmicDebts(num) {
+export function checkKarmicDebts(totalsArray) {
   const debts = [13, 14, 16, 19];
-  return debts.includes(num) ? num : null;
+  const found = [];
+  totalsArray.forEach(t => {
+    if (debts.includes(t) && !found.includes(t)) {
+      found.push(t);
+    }
+  });
+  return found;
+}
+
+export function calculatePlanesOfExpression(name) {
+  const chars = name.toUpperCase().replace(/[^A-Z]/g, '').split('');
+  const counts = { physical: 0, mental: 0, emotional: 0, intuitive: 0 };
+  
+  chars.forEach(c => {
+    if (PLANES.physical.includes(c)) counts.physical++;
+    if (PLANES.mental.includes(c)) counts.mental++;
+    if (PLANES.emotional.includes(c)) counts.emotional++;
+    if (PLANES.intuitive.includes(c)) counts.intuitive++;
+  });
+  
+  return counts;
 }
 
 export function calculateGrowthNumber(name) {
@@ -88,10 +127,24 @@ export function analyzePerWord(fullName) {
       word,
       pythagorean: pyth.value,
       chaldean: chal.value,
+      chaldeanTotal: chal.total,
       neptu: neptu,
       interpretation: getInterpretation(pyth.value)
     };
   });
+}
+
+export function getInterpretation(number) {
+  const key = String(number);
+  return interpretations.numbers[key] || interpretations.numbers["1"];
+}
+
+export function getChaldeanCompoundInterpretation(number) {
+  return interpretations.chaldeanCompounds[String(number)] || null;
+}
+
+export function getKarmicDebtInterpretation(number) {
+  return interpretations.karmicDebts[String(number)] || null;
 }
 
 export function calculateMetaphysicalScore(numerologyData) {
@@ -105,6 +158,11 @@ export function calculateMetaphysicalScore(numerologyData) {
   // Bonus for Master Numbers
   if ([11, 22, 33].includes(numerologyData.destiny)) score += 5;
   if ([11, 22, 33].includes(numerologyData.chaldeanDestiny)) score += 5;
+  
+  // Penalty for Karmic Debts
+  if (numerologyData.karmicDebts.length > 0) {
+    score -= (numerologyData.karmicDebts.length * 5);
+  }
   
   return score;
 }
@@ -124,50 +182,70 @@ export function calculateCompatibility(numbers) {
   return Math.round(totalHarmony / comparisons);
 }
 
-export function getInterpretation(number) {
-  const key = String(number);
-  return interpretations.numbers[key] || interpretations.numbers["1"];
-}
-
 export function analyzeNumerology(name, birthDate) {
-  const lifePath = calculateLifePath(birthDate);
+  const lifePathObj = calculateLifePath(birthDate);
   const birthDayNumber = reduceToSingle(birthDate.getDate());
+  
   const destinyObj = calculateDestiny(name, PYTHAGOREAN_MAP);
   const chaldeanObj = calculateDestiny(name, CHALDEAN_MAP);
-  const soulUrge = calculateSoulUrge(name);
-  const personality = calculatePersonality(name);
+  
+  const soulUrgeObj = calculateSoulUrge(name);
+  const personalityObj = calculatePersonality(name);
+  
   const wordAnalysis = analyzePerWord(name);
   const karmicLessons = calculateKarmicLessons(name);
   const growthNumber = calculateGrowthNumber(name);
   
-  // Check for Karmic Debts in main numbers
-  const karmicDebts = [
-    calculateKarmicDebts(destinyObj.total),
-    calculateKarmicDebts(calculateLifePath(birthDate)) // Simplified: checking raw totals before reduction would be better but requires engine change
-  ].filter(d => d !== null);
+  const planesOfExpression = calculatePlanesOfExpression(name);
+  
+  // Check for Karmic Debts across all major calculations
+  const karmicDebtNumbers = checkKarmicDebts([
+    lifePathObj.total,
+    destinyObj.total,
+    soulUrgeObj.total,
+    personalityObj.total,
+    birthDate.getDate()
+  ]);
+  
+  const karmicDebts = karmicDebtNumbers.map(num => ({
+    number: num,
+    interpretation: getKarmicDebtInterpretation(num)
+  }));
+  
+  const chaldeanCompounds = [];
+  if (chaldeanObj.total >= 10) {
+     chaldeanCompounds.push({
+       number: chaldeanObj.total,
+       interpretation: getChaldeanCompoundInterpretation(chaldeanObj.total)
+     });
+  }
 
   const result = {
-    lifePath,
+    lifePath: lifePathObj.value,
     tanggal: birthDayNumber,
     swara: destinyObj.value,
-    atma: soulUrge,
-    personality,
+    atma: soulUrgeObj.value,
+    personality: personalityObj.value,
     destiny: destinyObj.value,
     destinyBreakdown: destinyObj.breakdown,
     chaldeanDestiny: chaldeanObj.value,
+    chaldeanTotal: chaldeanObj.total,
+    chaldeanCompounds,
     wordAnalysis,
-    soulUrge,
+    soulUrge: soulUrgeObj.value,
     karmicLessons,
     karmicDebts,
     growthNumber,
-    lifePathInterpretation: getInterpretation(lifePath),
+    planesOfExpression,
+    
+    lifePathInterpretation: getInterpretation(lifePathObj.value),
     tanggalInterpretation: getInterpretation(birthDayNumber),
     swaraInterpretation: getInterpretation(destinyObj.value),
-    atmaInterpretation: getInterpretation(soulUrge),
-    personalityInterpretation: getInterpretation(personality),
+    atmaInterpretation: getInterpretation(soulUrgeObj.value),
+    personalityInterpretation: getInterpretation(personalityObj.value),
     destinyInterpretation: getInterpretation(destinyObj.value),
     chaldeanInterpretation: getInterpretation(chaldeanObj.value),
-    soulUrgeInterpretation: getInterpretation(soulUrge),
+    soulUrgeInterpretation: getInterpretation(soulUrgeObj.value),
   };
   
   result.metaphysicalScore = calculateMetaphysicalScore(result);
@@ -175,9 +253,9 @@ export function analyzeNumerology(name, birthDate) {
 }
 
 export function calculateFamilyNumerologyScore(fatherName, fatherBirth, motherName, motherBirth, childName, childBirth) {
-  const fatherLP = calculateLifePath(fatherBirth);
-  const motherLP = calculateLifePath(motherBirth);
-  const childLP = calculateLifePath(childBirth);
+  const fatherLP = calculateLifePath(fatherBirth).value;
+  const motherLP = calculateLifePath(motherBirth).value;
+  const childLP = calculateLifePath(childBirth).value;
   const fatherD = calculateDestiny(fatherName, PYTHAGOREAN_MAP).value;
   const motherD = calculateDestiny(motherName, PYTHAGOREAN_MAP).value;
   const childD = calculateDestiny(childName, PYTHAGOREAN_MAP).value;
