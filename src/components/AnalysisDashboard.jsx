@@ -738,7 +738,7 @@ function NumerologyTab({ data, isSelf }) {
               <p>
                 <strong>Karmic Debts (Hutang Karmik):</strong><br />
                 {num.karmicDebts?.length > 0 ? (
-                  <span style={{ color: 'var(--accent-orange)' }}>Terdeteksi angka: {num.karmicDebts.join(', ')}</span>
+                  <span style={{ color: 'var(--accent-orange)' }}>Terdeteksi angka: {num.karmicDebts.map(d => d.number).join(', ')}</span>
                 ) : (
                   <span style={{ color: 'var(--accent-green)' }}>Tidak terdeteksi hutang karmik.</span>
                 )}
