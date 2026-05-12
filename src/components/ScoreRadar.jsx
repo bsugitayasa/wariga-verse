@@ -19,11 +19,13 @@ export default function ScoreRadar({ scores }) {
     if (!canvas || !scores) return;
     const ctx = canvas.getContext('2d');
     const dpr = window.devicePixelRatio || 1;
-    const size = 380;
+    const size = 500; // Increased to prevent clipping
     canvas.width = size * dpr;
     canvas.height = size * dpr;
-    canvas.style.width = size + 'px';
-    canvas.style.height = size + 'px';
+    canvas.style.width = '100%';
+    canvas.style.maxWidth = size + 'px';
+    canvas.style.aspectRatio = '1 / 1';
+    canvas.style.height = 'auto';
     ctx.scale(dpr, dpr);
 
     const cx = size / 2;
@@ -112,12 +114,20 @@ export default function ScoreRadar({ scores }) {
       ctx.textAlign = 'center';
       for (let i = 0; i < sides; i++) {
         const angle = startAngle + i * angleStep;
-        const lx = cx + Math.cos(angle) * (maxR + 38);
-        const ly = cy + Math.sin(angle) * (maxR + 38);
+        const lx = cx + Math.cos(angle) * (maxR + 42);
+        const ly = cy + Math.sin(angle) * (maxR + 42);
         
-        ctx.fillText(LABELS[i], lx, ly);
-        ctx.fillStyle = COLORS.dot;
-        ctx.fillText(Math.round(values[i] * progress), lx, ly + 14);
+        const labelWords = LABELS[i].split(' ');
+        if (labelWords.length > 1) {
+          ctx.fillText(labelWords[0], lx, ly - 8);
+          ctx.fillText(labelWords.slice(1).join(' '), lx, ly + 4);
+          ctx.fillStyle = COLORS.dot;
+          ctx.fillText(Math.round(values[i] * progress), lx, ly + 18);
+        } else {
+          ctx.fillText(LABELS[i], lx, ly);
+          ctx.fillStyle = COLORS.dot;
+          ctx.fillText(Math.round(values[i] * progress), lx, ly + 14);
+        }
         ctx.fillStyle = COLORS.text;
       }
 

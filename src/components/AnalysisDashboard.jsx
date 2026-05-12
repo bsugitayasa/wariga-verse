@@ -319,7 +319,7 @@ function OverviewTab({ breakdown, enrichedScores }) {
   return (
     <div className="glass-card">
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'center', marginBottom: '2rem' }}>
-        <div style={{ flex: '1 1 350px' }}>
+        <div style={{ flex: '1 1 450px', display: 'flex', justifyContent: 'center' }}>
           <ScoreRadar scores={breakdown} />
         </div>
         <div style={{ flex: '1 1 250px', display: 'flex', flexDirection: 'column', gap: '1rem' }}>

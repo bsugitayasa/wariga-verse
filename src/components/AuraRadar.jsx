@@ -19,7 +19,7 @@ export default function AuraRadar({ semanticData }) {
     if (!canvas || !semanticData) return;
     const ctx = canvas.getContext('2d');
     const dpr = window.devicePixelRatio || 1;
-    const size = 420; // Increased to accommodate long labels like "Kesejahteraan"
+    const size = 500; // Increased to 500 to ensure no labels ever clip
     canvas.width = size * dpr;
     canvas.height = size * dpr;
     canvas.style.width = '100%';
@@ -113,12 +113,22 @@ export default function AuraRadar({ semanticData }) {
       ctx.textAlign = 'center';
       for (let i = 0; i < sides; i++) {
         const angle = startAngle + i * angleStep;
-        const lx = cx + Math.cos(angle) * (maxR + 32);
-        const ly = cy + Math.sin(angle) * (maxR + 32);
+        // Increase text distance from radar slightly for better breathability
+        const lx = cx + Math.cos(angle) * (maxR + 45);
+        const ly = cy + Math.sin(angle) * (maxR + 45);
         
-        ctx.fillText(LABELS[i], lx, ly);
-        ctx.fillStyle = COLORS.dot;
-        ctx.fillText(Math.round(values[i] * progress) + '/10', lx, ly + 14);
+        // Split label if it contains spaces to save horizontal room
+        const words = LABELS[i].split(' ');
+        if (words.length > 1) {
+          ctx.fillText(words[0], lx, ly - 8);
+          ctx.fillText(words[1], lx, ly + 4);
+          ctx.fillStyle = COLORS.dot;
+          ctx.fillText(Math.round(values[i] * progress) + '/10', lx, ly + 18);
+        } else {
+          ctx.fillText(LABELS[i], lx, ly);
+          ctx.fillStyle = COLORS.dot;
+          ctx.fillText(Math.round(values[i] * progress) + '/10', lx, ly + 14);
+        }
         ctx.fillStyle = COLORS.text;
       }
 
