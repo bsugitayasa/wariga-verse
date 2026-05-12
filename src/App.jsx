@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import Header from './components/Header';
 import InputForm from './components/InputForm';
 import AnalysisDashboard from './components/AnalysisDashboard';
@@ -15,6 +15,13 @@ export default function App() {
   const [lastFormData, setLastFormData] = useState(null);
   const resultsRef = useRef(null);
 
+  useEffect(() => {
+    // Redirection if user accesses something like /bazi directly
+    if (window.location.pathname !== '/') {
+      window.history.replaceState(null, '', '/');
+    }
+  }, []);
+
   const handleSubmit = useCallback((formData) => {
     setAnalysis(null);
     setComparison(null);
@@ -24,7 +31,7 @@ export default function App() {
 
     setTimeout(() => {
       try {
-        const childName = formData.child.name || (formData.isSelfAnalysis ? 'Saya' : 'Anak');
+        const childName = formData.child.name || (formData.isSelfAnalysis ? 'Saya' : 'Individu');
 
         const result = runFullAnalysis(
           formData.father.name, formData.father.birthDate,

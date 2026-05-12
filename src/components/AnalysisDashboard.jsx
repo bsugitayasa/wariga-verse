@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ScoreRadar from './ScoreRadar';
 import NawaSangaCompass from './NawaSangaCompass';
+import AuraRadar from './AuraRadar';
 
 const TABS = [
   { key: 'overview', icon: '📊', label: 'Ringkasan' },
@@ -11,6 +12,7 @@ const TABS = [
   { key: 'bazi', icon: '📅', label: 'BaZi' },
   { key: 'qimen', icon: '⚔️', label: 'Qimen Dun Jia' },
   { key: 'nawaSanga', icon: '🧭', label: 'Nawa Sanga' },
+  { key: 'nlp', icon: '✨', label: 'Semantik & Aura' },
 ];
 
 function getScoreClass(score) {
@@ -24,7 +26,7 @@ export default function AnalysisDashboard({ analysis }) {
   const [activeTab, setActiveTab] = useState('overview');
   if (!analysis) return null;
 
-  const { totalScore, breakdown, recommendation } = analysis;
+  const { totalScore, breakdown, recommendation, enrichedScores } = analysis;
 
   return (
     <div className="dashboard animate-fade-in-up" id="analysis-dashboard">
@@ -42,19 +44,36 @@ export default function AnalysisDashboard({ analysis }) {
       </div>
 
       {/* Tabs */}
-      <div className="tabs" id="dashboard-tabs">
+      <div className="tabs glass-card" id="dashboard-tabs" style={{ display: 'flex', flexWrap: 'nowrap', gap: '4px', overflowX: 'hidden', padding: '0.5rem', width: '100%', justifyContent: 'space-between' }}>
         {TABS.map(tab => (
           <button key={tab.key}
             className={`tab ${activeTab === tab.key ? 'tab--active' : ''}`}
-            onClick={() => setActiveTab(tab.key)}>
-            {tab.icon} {tab.label}
+            onClick={() => setActiveTab(tab.key)}
+            style={{ 
+              flex: '1', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              alignItems: 'center', 
+              justifyContent: 'center',
+              padding: '0.5rem 0.2rem',
+              gap: '4px',
+              minWidth: 0, /* allows shrinking */
+              background: activeTab === tab.key ? 'rgba(245, 158, 11, 0.15)' : 'transparent',
+              border: activeTab === tab.key ? '1px solid rgba(245, 158, 11, 0.3)' : '1px solid transparent',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              color: activeTab === tab.key ? 'var(--gold)' : 'var(--text-secondary)'
+            }}
+          >
+            <span style={{ fontSize: '1.2rem' }}>{tab.icon}</span>
+            <span style={{ fontSize: '0.65rem', textOverflow: 'ellipsis', overflow: 'hidden', width: '100%', textAlign: 'center', whiteSpace: 'nowrap' }}>{tab.label}</span>
           </button>
         ))}
       </div>
 
       {/* Tab Content */}
       <div className="dashboard__content" key={activeTab}>
-        {activeTab === 'overview' && <OverviewTab breakdown={breakdown} />}
+        {activeTab === 'overview' && <OverviewTab breakdown={breakdown} enrichedScores={enrichedScores} />}
         {activeTab === 'wariga' && <WarigaTab data={breakdown.wariga} isSelf={analysis.isSelfAnalysis} />}
         {activeTab === 'numerology' && <NumerologyTab data={breakdown.numerology} isSelf={analysis.isSelfAnalysis} />}
         {activeTab === 'astrology' && <AstrologyTab data={breakdown.astrology} />}
@@ -62,6 +81,7 @@ export default function AnalysisDashboard({ analysis }) {
         {activeTab === 'bazi' && <BaziTab data={breakdown.bazi} />}
         {activeTab === 'qimen' && <QimenTab data={breakdown.qimen} />}
         {activeTab === 'nawaSanga' && <NawaSangaTab data={breakdown.nawaSanga} />}
+        {activeTab === 'nlp' && <NLPTab data={breakdown.nlp} enrichedScores={enrichedScores} />}
       </div>
     </div>
   );
@@ -80,10 +100,10 @@ function BaziTab({ data }) {
         {['Jam', 'Hari', 'Bulan', 'Tahun'].map(p => <div key={p} style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{p}</div>)}
         {Object.entries(bazi.pillars).reverse().map(([key, p]) => (
           <div key={key} className="glass-card" style={{ padding: '0.75rem 0.25rem', background: 'rgba(255,255,255,0.02)', border: key === 'day' ? '1px solid var(--purple-light)' : '1px solid transparent' }}>
-            <div style={{ fontSize: '1.1rem', fontWeight: 700 }}>{p.stem.name}</div>
-            <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginBottom: '8px' }}>{p.stem.element}</div>
-            <div style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--gold)' }}>{p.branch.name}</div>
-            <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>{p.branch.animal}</div>
+            <div style={{ fontSize: '1.8rem', fontWeight: 700 }}>{p[0]}</div>
+            <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginBottom: '8px' }}>Batang Langit</div>
+            <div style={{ fontSize: '1.8rem', fontWeight: 700, color: 'var(--gold)' }}>{p[1]}</div>
+            <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Cabang Bumi</div>
           </div>
         ))}
       </div>
@@ -92,7 +112,7 @@ function BaziTab({ data }) {
       <div className="glass-card" style={{ padding: '1rem', background: 'rgba(124,58,237,0.05)', marginBottom: '1.5rem' }}>
         <h4 style={{ fontSize: '0.9rem', color: 'var(--purple-light)', marginBottom: '0.75rem' }}>💡 Cara Membaca BaZi untuk Orang Awam</h4>
         <ul style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', paddingLeft: '1.2rem', lineHeight: '1.5' }}>
-          <li><strong>Pilar Hari (Day Master):</strong> Karakter asli anak. Fokus pada elemen <strong>{bazi.dayMaster.element}</strong> di sini.</li>
+          <li><strong>Pilar Hari (Day Master):</strong> Karakter asli individu. Fokus pada elemen <strong>{bazi.dayMaster.element}</strong> di sini.</li>
           <li><strong>Pilar Tahun:</strong> Mewakili warisan leluhur dan kesan pertama di masyarakat.</li>
           <li><strong>Pilar Bulan:</strong> Mewakili potensi karier dan hubungan dengan orang tua.</li>
           <li><strong>Pilar Jam:</strong> Mewakili aspirasi, masa tua, dan hubungan dengan keturunannya nanti.</li>
@@ -100,15 +120,25 @@ function BaziTab({ data }) {
       </div>
 
       <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
-        <div className="glass-card" style={{ flex: 1, padding: '1rem' }}>
+        <div className="glass-card" style={{ flex: 1, padding: '1rem', borderLeft: '4px solid var(--gold)' }}>
           <h5 style={{ marginBottom: '0.5rem', fontSize: '0.85rem' }}>Day Master (Inti Karakter)</h5>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <span style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--purple-light)' }}>{bazi.dayMaster.name}</span>
-            <span className="badge badge--gold">{bazi.dayMaster.element} {bazi.dayMaster.polarity}</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+            <span style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--purple-light)' }}>{bazi.dayMasterDetails ? bazi.dayMasterDetails.name : bazi.dayMaster}</span>
+            <span className="badge badge--gold">{bazi.dayMasterElement}</span>
           </div>
-          <p style={{ fontSize: '0.75rem', marginTop: '0.5rem', color: 'var(--text-muted)' }}>
-            Karakter utama anak didominasi oleh energi {bazi.dayMaster.element}.
-          </p>
+          {bazi.dayMasterDetails && bazi.dayMasterDetails.needs && bazi.dayMasterDetails.needs.length > 0 ? (
+            <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+              <p style={{ marginBottom: '8px' }}>{bazi.dayMasterDetails.desc}</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                <strong style={{ color: 'var(--gold)' }}>Dibutuhkan:</strong>
+                {bazi.dayMasterDetails.needs.map((n, i) => <span key={i} className="badge" style={{ background: 'rgba(245,158,11,0.1)', color: 'var(--gold)', border: '1px solid rgba(245,158,11,0.3)', padding: '2px 8px' }}>{n}</span>)}
+              </div>
+            </div>
+          ) : (
+            <p style={{ fontSize: '0.75rem', marginTop: '0.5rem', color: 'var(--text-muted)' }}>
+              Karakter utama didominasi oleh energi {bazi.dayMasterElement}.
+            </p>
+          )}
         </div>
         <div className="glass-card" style={{ flex: 1, padding: '1rem' }}>
           <h5 style={{ marginBottom: '0.5rem', fontSize: '0.85rem' }}>Keseimbangan Elemen</h5>
@@ -155,19 +185,42 @@ function QimenTab({ data }) {
       <div className="glass-card" style={{ padding: '1rem', background: 'rgba(245,158,11,0.05)', marginBottom: '1.5rem' }}>
         <h4 style={{ fontSize: '0.9rem', color: 'var(--gold)', marginBottom: '0.75rem' }}>💡 Cara Membaca Qimen Dun Jia</h4>
         <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
-          <p style={{ marginBottom: '0.5rem' }}>Qimen Dun Jia adalah peta energi saat kelahiran yang menunjukkan "keadaan lapangan" hidup anak:</p>
+          <p style={{ marginBottom: '0.5rem' }}>Qimen Dun Jia adalah peta energi saat kelahiran yang menunjukkan "keadaan lapangan" hidup:</p>
           <ul style={{ paddingLeft: '1.2rem' }}>
-            <li><strong>Gerbang ({qimen.gate}):</strong> Mewakili tindakan manusia dan emosi. Menunjukkan bagaimana anak berinteraksi dengan dunia.</li>
+            <li><strong>Gerbang ({qimen.gate}):</strong> Mewakili tindakan manusia dan emosi. Menunjukkan interaksi dengan dunia.</li>
             <li><strong>Bintang ({qimen.star}):</strong> Mewakili tren kosmik dan kondisi lingkungan yang mendukung atau menghambat.</li>
-            <li><strong>Dewa ({qimen.spirit}):</strong> Mewakili bantuan spiritual atau "bawah sadar" yang membimbing anak.</li>
+            <li><strong>Dewa ({qimen.spirit}):</strong> Mewakili bantuan spiritual atau "bawah sadar" yang membimbing.</li>
           </ul>
         </div>
       </div>
 
       <div className="glass-card" style={{ padding: '1rem', borderLeft: '4px solid var(--gold)' }}>
-        <h5 style={{ marginBottom: '0.5rem', color: 'var(--gold)' }}>Analisis Strategis:</h5>
+        <h5 style={{ marginBottom: '0.5rem', color: 'var(--gold)' }}>Analisis Strategis Kelahiran:</h5>
         <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{qimen.description}</p>
       </div>
+
+      {qimen.nameQimen && qimen.nameQimen.palaces.length > 0 && (
+        <div style={{ marginTop: '2rem' }}>
+          <h4 style={{ color: 'var(--purple-light)', marginBottom: '1rem' }}>Istana Nama (Qimen Suku Kata)</h4>
+          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+            <strong>Istana Nama</strong> memetakan kekuatan kata ke dalam arah kompas dimensi energi (Ba Gua). 
+            Blok <strong style={{ color: 'var(--accent-green)' }}>Hijau</strong> menunjukkan energi sinkron/konstruktif, sementara blok <strong style={{ color: 'var(--accent-red)' }}>Merah</strong> (khususnya <strong>Istana 5 / Pusat</strong>) mencerminkan energi destruktif atau ekstrim yang sulit dikendalikan dan butuh penyeimbang kuat.
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            {qimen.nameQimen.palaces.map((p, idx) => (
+              <div key={idx} className="glass-card" style={{ padding: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: p.isGood ? 'rgba(16,185,129,0.05)' : 'rgba(239,68,68,0.05)', border: p.isGood ? '1px solid rgba(16,185,129,0.2)' : '1px solid rgba(239,68,68,0.2)' }}>
+                <div>
+                  <div style={{ fontSize: '1.2rem', fontWeight: 800, marginBottom: '4px' }}>{p.word}</div>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>{p.desc}</div>
+                </div>
+                <div style={{ textAlign: 'right' }}>
+                  <span className={`badge ${p.isGood ? 'badge--green' : 'badge--orange'}`}>{p.makna} (Istana {p.palace})</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -217,7 +270,7 @@ function JyotishaTab({ data }) {
           <ul style={{ paddingLeft: '1.2rem' }}>
             <li><strong>Nakshatra ({jyo.nakshatra}):</strong> Adalah "Bintang Kelahiran" Anda. Ini adalah faktor terpenting dalam astrologi India untuk menentukan nasib dan karakter.</li>
             <li><strong>Pada ({jyo.pada}):</strong> Setiap Nakshatra dibagi menjadi 4 bagian. Ini memberikan detail lebih spesifik tentang energi kelahiran Anda.</li>
-            <li><strong>Suku Kata Nama:</strong> Di bawah ini adalah bunyi getaran suara yang paling harmonis untuk mengawali nama anak agar selaras dengan alam semesta.</li>
+            <li><strong>Suku Kata Nama:</strong> Di bawah ini adalah bunyi getaran suara yang paling harmonis untuk mengawali nama agar selaras dengan alam semesta.</li>
           </ul>
         </div>
       </div>
@@ -262,11 +315,11 @@ function JyotishaTab({ data }) {
   );
 }
 
-function OverviewTab({ breakdown }) {
+function OverviewTab({ breakdown, enrichedScores }) {
   return (
     <div className="glass-card">
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'center' }}>
-        <div style={{ flex: '1 1 350px' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'center', marginBottom: '2rem' }}>
+        <div style={{ flex: '1 1 450px', display: 'flex', justifyContent: 'center' }}>
           <ScoreRadar scores={breakdown} />
         </div>
         <div style={{ flex: '1 1 250px', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -296,6 +349,118 @@ function OverviewTab({ breakdown }) {
           ))}
         </div>
       </div>
+      
+      {enrichedScores && (
+        <div className="glass-card" style={{ background: 'rgba(255,255,255,0.02)' }}>
+          <h4 style={{ marginBottom: '1rem', color: 'var(--gold)' }}>✨ Dimensi Metafisika Lanjutan</h4>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+            <div className="glass-card" style={{ padding: '1rem', textAlign: 'center' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🕉️</div>
+              <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--purple-light)' }}>{enrichedScores.spiritualDepth}</div>
+              <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Spiritual Depth</div>
+            </div>
+            <div className="glass-card" style={{ padding: '1rem', textAlign: 'center' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>👑</div>
+              <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--gold)' }}>{enrichedScores.royalAura}</div>
+              <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Royal Aura</div>
+            </div>
+            <div className="glass-card" style={{ padding: '1rem', textAlign: 'center' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🗣️</div>
+              <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--accent-green)' }}>{enrichedScores.pronunciation}</div>
+              <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Pronunciation (Global)</div>
+            </div>
+            <div className="glass-card" style={{ padding: '1rem', textAlign: 'center' }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🌺</div>
+              <div style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--accent-orange)' }}>{enrichedScores.baliAuthenticity}</div>
+              <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Bali Authenticity</div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function renderSemanticBar(label, value, color) {
+  return (
+    <div style={{ marginBottom: '0.75rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px', fontSize: '0.85rem' }}>
+        <span>{label}</span>
+        <strong style={{ color }}>{value}/10</strong>
+      </div>
+      <div style={{ height: '6px', background: 'rgba(255,255,255,0.05)', borderRadius: '3px', overflow: 'hidden' }}>
+        <div style={{ height: '100%', width: `${value * 10}%`, background: color, borderRadius: '3px', transition: 'width 1s ease' }} />
+      </div>
+    </div>
+  );
+}
+
+function NLPTab({ data, enrichedScores }) {
+  const nlp = data?.data;
+  if (!nlp) return <div className="glass-card text-muted">Data NLP tidak tersedia</div>;
+
+  return (
+    <div className="glass-card">
+      <h3 style={{ marginBottom: '1.5rem' }}>✨ Analisis Semantik & Aura Nama</h3>
+      
+      <div className="grid-2" style={{ gap: '1.5rem', marginBottom: '1.5rem' }}>
+        <div className="glass-card" style={{ padding: '1.25rem', border: '1px solid rgba(124,58,237,0.2)', background: 'rgba(124,58,237,0.02)' }}>
+          <h4 style={{ color: 'var(--purple-light)', marginBottom: '1rem' }}>Aura Semantik</h4>
+          {renderSemanticBar('Spiritualitas', nlp.semantic.spiritualDepth, 'var(--purple-light)')}
+          {renderSemanticBar('Kepemimpinan/Royal', nlp.semantic.royalAura, 'var(--gold)')}
+          {renderSemanticBar('Keberanian', nlp.semantic.bravery, 'var(--accent-red)')}
+          {renderSemanticBar('Kecerdasan', nlp.semantic.intellect, '#3B82F6')}
+          {renderSemanticBar('Keindahan/Pesona', nlp.semantic.beauty, '#EC4899')}
+          {renderSemanticBar('Kesejahteraan', nlp.semantic.wealth, 'var(--accent-green)')}
+          {renderSemanticBar('Kasih Sayang', nlp.semantic.compassion, '#F43F5E')}
+        </div>
+
+        <div className="glass-card" style={{ padding: '1.25rem', border: '1px solid rgba(245,158,11,0.2)', background: 'rgba(245,158,11,0.02)' }}>
+          <AuraRadar semanticData={nlp.semantic} />
+        </div>
+      </div>
+
+      <div className="glass-card" style={{ padding: '1.25rem', border: '1px solid rgba(245,158,11,0.2)', background: 'rgba(245,158,11,0.02)', marginBottom: '1.5rem' }}>
+        <h4 style={{ color: 'var(--gold)', marginBottom: '1rem' }}>Analisis Fonetik & IAST</h4>
+        <div style={{ marginBottom: '1rem' }}>
+          <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Sanskerta IAST:</div>
+          <div style={{ fontSize: '1.2rem', fontWeight: 700, fontFamily: 'serif' }}>{nlp.iast}</div>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+          <span>Phonetic Score:</span> <span className="badge badge--gold">{nlp.phoneticScore}</span>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <span>Global Friendliness:</span> <span className="badge badge--green">{nlp.globalFriendliness}</span>
+        </div>
+        <p style={{ marginTop: '1rem', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+          Skor di atas mencerminkan kemudahan pengucapan nama secara global dan vibrasi fonetik yang dihasilkan.
+        </p>
+      </div>
+
+      <div className="glass-card" style={{ padding: '1.25rem', background: 'rgba(255,255,255,0.02)' }}>
+        <h4 style={{ marginBottom: '1rem', color: 'var(--gold)' }}>💡 Evaluasi Ekstensi Metafisik</h4>
+        <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '1rem', lineHeight: '1.6' }}>
+          <strong>Evaluasi Ekstensi Metafisik</strong> adalah penilaian komprehensif yang tidak hanya melihat hitungan angka tunggal, tetapi menggabungkan sinkronisasi elemen numerologi, beban nasib masa lalu (karma), dan kelancaran energi psikologis secara menyeluruh.
+        </p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+          <div className="glass-card" style={{ padding: '1rem', background: 'rgba(124,58,237,0.03)', border: '1px solid rgba(124,58,237,0.1)' }}>
+            <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Stabilitas Numerologi</div>
+            <div style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.5rem' }}>{enrichedScores?.numerologyStability}%</div>
+            <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', margin: 0, lineHeight: '1.4' }}>
+              Mengukur tingkat fondasi mental berdasarkan susunan hurufnya. Semakin tinggi skor, semakin stabil jalan pemikiran dan semakin tangguh menghadapi tekanan mental.
+            </p>
+          </div>
+          <div className="glass-card" style={{ padding: '1rem', background: enrichedScores?.karmicLoad > 50 ? 'rgba(239,68,68,0.05)' : 'rgba(16,185,129,0.05)', border: enrichedScores?.karmicLoad > 50 ? '1px solid rgba(239,68,68,0.2)' : '1px solid rgba(16,185,129,0.2)' }}>
+            <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Beban Karmik (Karmic Load)</div>
+            <div style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.5rem', color: enrichedScores?.karmicLoad > 50 ? 'var(--accent-red)' : 'var(--accent-green)' }}>
+              {enrichedScores?.karmicLoad}%
+            </div>
+            <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', margin: 0, lineHeight: '1.4' }}>
+              Mengukur seberapa besar tantangan masa lalu (hutang karma/benturan kosmik BaZi) yang dibawa. <strong style={{color: 'var(--accent-red)'}}>Tinggi (Merah)</strong> berarti akan melalui banyak tempaan/ujian sulit di usia awal. <strong style={{color: 'var(--accent-green)'}}>Rendah (Hijau)</strong> berarti jalan kehidupannya cenderung lebih mulus dan minim rintangan bawaan.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -308,7 +473,7 @@ function WarigaTab({ data, isSelf }) {
 
   return (
     <div className="glass-card">
-      <h3 style={{ marginBottom: '1.5rem' }}>📜 Analisis Wariga Bali {isSelf ? '' : '— Anak'}</h3>
+      <h3 style={{ marginBottom: '1.5rem' }}>📜 Analisis Wariga Bali</h3>
       <div className="grid-2" style={{ gap: '1.5rem' }}>
         {/* Wewaran Section */}
         <div className="glass-card" style={{ padding: '1rem' }}>
@@ -335,11 +500,11 @@ function WarigaTab({ data, isSelf }) {
           <p style={{ fontSize: '0.9rem' }}>{child.wuku.watak}</p>
         </div>
 
-        {/* Dauh Section */}
+        {/* Dauh Kelahiran Section */}
         {dauh && (
           <div className="glass-card" style={{ gridColumn: '1 / -1', padding: '1.25rem', border: '1px solid rgba(245, 158, 11, 0.2)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-              <h4 style={{ color: 'var(--gold)' }}>🕒 Analisis Dauh (Pembagian Waktu)</h4>
+              <h4 style={{ color: 'var(--gold)' }}>🕒 Analisis Dauh Kelahiran</h4>
               <span className="badge badge--purple">{dauh.timeLabel}</span>
             </div>
             
@@ -367,6 +532,48 @@ function WarigaTab({ data, isSelf }) {
                     {dauh.dasa.quality}
                   </span>
                   <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>— {dauh.dasa.description}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Dauh Nama Section */}
+        {data?.data?.nameDauh && (
+          <div className="glass-card" style={{ gridColumn: '1 / -1', padding: '1.25rem', border: '1px solid rgba(124, 58, 237, 0.2)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+              <h4 style={{ color: 'var(--purple-light)' }}>📝 Analisis Dauh Nama (Siklus Huruf)</h4>
+              <span className="badge badge--gold">{data.data.nameDauh.letterCount} Huruf</span>
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+              <div className="glass-card" style={{ padding: '0.75rem', background: 'rgba(255,255,255,0.02)' }}>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '4px' }}>Asta Dauh Nama</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ fontWeight: 700 }}>Mod 8: {data.data.nameDauh.asta.value}</span>
+                  <span className={`badge ${data.data.nameDauh.asta.isGood ? 'badge--green' : 'badge--orange'}`}>
+                    {data.data.nameDauh.asta.makna}
+                  </span>
+                </div>
+              </div>
+              
+              <div className="glass-card" style={{ padding: '0.75rem', background: 'rgba(255,255,255,0.02)' }}>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '4px' }}>Panca Dauh Nama</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ fontWeight: 700 }}>Mod 5: {data.data.nameDauh.panca.value}</span>
+                  <span className={`badge ${data.data.nameDauh.panca.isGood ? 'badge--green' : 'badge--orange'}`}>
+                    {data.data.nameDauh.panca.makna}
+                  </span>
+                </div>
+              </div>
+
+              <div className="glass-card" style={{ padding: '0.75rem', background: 'rgba(255,255,255,0.02)', gridColumn: '1 / -1' }}>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '4px' }}>Dasa Dauh Nama (Siklus 10)</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--gold)' }}>Mod 10: {data.data.nameDauh.dasa.value}</span>
+                  <span className={`badge ${data.data.nameDauh.dasa.isGood ? 'badge--green' : 'badge--orange'}`}>
+                    {data.data.nameDauh.dasa.makna}
+                  </span>
                 </div>
               </div>
             </div>
@@ -411,7 +618,7 @@ function NumerologyTab({ data, isSelf }) {
   return (
     <div className="glass-card">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-        <h3 style={{ margin: 0 }}>🔢 Analisis Numerologi Metafisik {isSelf ? '' : '— Anak'}</h3>
+        <h3 style={{ margin: 0 }}>🔢 Analisis Numerologi Metafisik</h3>
         <div className="glass-card" style={{ padding: '0.5rem 1rem', display: 'flex', alignItems: 'center', gap: '10px', background: 'rgba(255,255,255,0.03)' }}>
           <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Skor Metafisik:</span>
           <strong style={{ color: metaStatus.color, fontSize: '1.1rem' }}>{num.metaphysicalScore}</strong>
@@ -420,6 +627,34 @@ function NumerologyTab({ data, isSelf }) {
           </span>
         </div>
       </div>
+      
+      {(() => {
+        const masters = [];
+        if ([11, 22, 33].includes(num.swara)) masters.push({val: num.swara, src: 'Swara (Destiny)'});
+        if ([11, 22, 33].includes(num.lifePath)) masters.push({val: num.lifePath, src: 'Life Path'});
+        if ([11, 22, 33].includes(num.atma)) masters.push({val: num.atma, src: 'Atma (Soul Urge)'});
+        
+        if (masters.length > 0) {
+          return (
+            <div className="glass-card" style={{ marginBottom: '1.5rem', background: 'rgba(124, 58, 237, 0.1)', border: '1px solid rgba(124, 58, 237, 0.4)' }}>
+              <h4 style={{ color: '#FCD34D', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                🌟 Kehadiran Angka Master (Master Numbers)
+              </h4>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
+                Kombinasi ini mewarisi getaran spiritual tingkat tinggi. Individu dengan Angka Master memiliki potensi luar biasa namun dituntut untuk melayani tujuan yang lebih besar.
+              </p>
+              <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                {masters.map((m, i) => (
+                  <span key={i} className="badge" style={{ background: '#FCD34D20', color: '#FCD34D', border: '1px solid #FCD34D', fontSize: '0.8rem' }}>
+                    {m.val} dari {m.src}
+                  </span>
+                ))}
+              </div>
+            </div>
+          );
+        }
+        return null;
+      })()}
 
       {/* Main Grid */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>

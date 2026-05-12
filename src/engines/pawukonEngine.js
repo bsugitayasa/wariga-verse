@@ -19,14 +19,30 @@ const PANCAWARA = [
   { name: 'Kliwon', nameBali: 'ᬓ᭄ᬮᬶᬯᭀᬦ᭄', urip: 8 },
 ];
 
+const INGKEL = ['Wong', 'Sato', 'Mina', 'Manuk', 'Taru', 'Buku'];
+
+// Lintang is based on combination of Saptawara and Pancawara (35 combinations)
+// Calculated simply by index matching.
+function getLintang(saptawaraIndex, pancawaraIndex) {
+  const LINTANG_MAP = {
+    '0-0': 'Kala Sungsang', '0-1': 'Kala Wungkulan', '0-2': 'Patrem', '0-3': 'Waluku', '0-4': 'Lawean',
+    '1-0': 'Kelapa', '1-1': 'Kukus', '1-2': 'Kirim', '1-3': 'Lembu', '1-4': 'Bati',
+    '2-0': 'Kuda', '2-1': 'Yuyu', '2-2': 'Asu', '2-3': 'Jong Sarat', '2-4': 'Makara',
+    '3-0': 'Tangis', '3-1': 'Lumbung', '3-2': 'Bade', '3-3': 'Karti', '3-4': 'Tiwa-tiwa',
+    '4-0': 'Salah Ukur', '4-1': 'Gajah', '4-2': 'Bade', '4-3': 'Kumba', '4-4': 'Naga',
+    '5-0': 'Bubu Bolong', '5-1': 'Puyuh', '5-2': 'Sungenge', '5-3': 'Magelut', '5-4': 'Angsa',
+    '6-0': 'Gajah Mina', '6-1': 'Ru', '6-2': 'Puu', '6-3': 'Perahu Sarat', '6-4': 'Tumenggung'
+  };
+  return LINTANG_MAP[`${saptawaraIndex}-${pancawaraIndex}`] || 'Lintang Tidak Diketahui';
+}
+
 // Epoch: 1 Jan 2000 = Saniscara (Sabtu=6), Umanis (0), Wuku Sungsang day 6 (index 69)
 const EPOCH = new Date(2000, 0, 1);
-const EPOCH_SAPTAWARA = 6; // Saniscara
-const EPOCH_PANCAWARA = 0; // Umanis
-const EPOCH_WUKU_DAY = 69; // Day 6 of Wuku Sungsang (9*7 + 6)
+const EPOCH_SAPTAWARA = 6;
+const EPOCH_PANCAWARA = 0;
+const EPOCH_WUKU_DAY = 69; 
 
 function getDaysSinceEpoch(date) {
-  // Use a reference date at 12:00 to avoid timezone/DST issues when calculating days
   const target = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 12, 0, 0);
   const epoch = new Date(EPOCH.getFullYear(), EPOCH.getMonth(), EPOCH.getDate(), 12, 0, 0);
   const diffMs = target.getTime() - epoch.getTime();
@@ -38,9 +54,6 @@ export function calculatePawukon(date) {
     return null;
   }
 
-  // Adjust date for Balinese calendar: Day transition typically at Sunrise or early dawn.
-  // Based on user feedback: 02:00 AM is previous day, but 04:00 AM (subuh) is already the current day.
-  // Setting cut-off to 03:00 AM.
   const calculationDate = new Date(date);
   if (date.getHours() < 3) {
     calculationDate.setDate(calculationDate.getDate() - 1);
@@ -48,27 +61,24 @@ export function calculatePawukon(date) {
 
   const offset = getDaysSinceEpoch(calculationDate);
 
-  // Saptawara (7-day cycle)
   let saptawaraIndex = ((offset % 7) + EPOCH_SAPTAWARA) % 7;
   if (saptawaraIndex < 0) saptawaraIndex += 7;
   const saptawara = SAPTAWARA[saptawaraIndex];
 
-  // Pancawara (5-day cycle)
   let pancawaraIndex = ((offset % 5) + EPOCH_PANCAWARA) % 5;
   if (pancawaraIndex < 0) pancawaraIndex += 5;
   const pancawara = PANCAWARA[pancawaraIndex];
 
-  // Wuku (210-day cycle, 30 wuku × 7 days)
   let wukuDayInCycle = ((offset + EPOCH_WUKU_DAY) % 210);
   if (wukuDayInCycle < 0) wukuDayInCycle += 210;
   const wukuIndex = Math.floor(wukuDayInCycle / 7);
   const wuku = wukuData[wukuIndex];
 
-  // Urip total
   const uripTotal = saptawara.urip + pancawara.urip;
-
-  // Otonan description
   const otonanDescription = `${saptawara.name} ${pancawara.name} Wuku ${wuku.name}`;
+  
+  const ingkel = INGKEL[wukuIndex % 6];
+  const lintang = getLintang(saptawaraIndex, pancawaraIndex);
 
   return {
     saptawara: {
@@ -90,6 +100,8 @@ export function calculatePawukon(date) {
       description: wuku.description,
       index: wuku.index,
     },
+    ingkel,
+    lintang,
     uripTotal,
     otonanDescription,
     dauh: analyzeDauh(date, saptawara.name),

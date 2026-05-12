@@ -1,25 +1,25 @@
 import { useRef, useEffect } from 'react';
 
-const LABELS = ['Wariga Bali', 'Numerologi', 'Astrologi', 'Jyotisha', 'BaZi', 'Qimen Dun Jia', 'Nawa Sanga', 'Karma'];
+const LABELS = ['Spiritualitas', 'Kepemimpinan', 'Keberanian', 'Kecerdasan', 'Keindahan', 'Kesejahteraan', 'Kasih Sayang'];
 const COLORS = {
-  fill: 'rgba(245, 158, 11, 0.15)',
-  stroke: 'rgba(245, 158, 11, 0.8)',
+  fill: 'rgba(124, 58, 237, 0.15)',
+  stroke: 'rgba(124, 58, 237, 0.8)',
   grid: 'rgba(255, 255, 255, 0.06)',
   gridStroke: 'rgba(255, 255, 255, 0.1)',
   text: '#A09BB0',
-  dot: '#F59E0B',
+  dot: '#8B5CF6',
 };
 
-export default function ScoreRadar({ scores }) {
+export default function AuraRadar({ semanticData }) {
   const canvasRef = useRef(null);
   const animRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas || !scores) return;
+    if (!canvas || !semanticData) return;
     const ctx = canvas.getContext('2d');
     const dpr = window.devicePixelRatio || 1;
-    const size = 500; // Increased to prevent clipping
+    const size = 500; // Increased to 500 to ensure no labels ever clip
     canvas.width = size * dpr;
     canvas.height = size * dpr;
     canvas.style.width = '100%';
@@ -29,9 +29,9 @@ export default function ScoreRadar({ scores }) {
     ctx.scale(dpr, dpr);
 
     const cx = size / 2;
-    const cy = size / 2;
-    const maxR = 140;
-    const sides = 8;
+    const cy = size / 2 + 10;
+    const maxR = 100;
+    const sides = 7;
     const angleStep = (Math.PI * 2) / sides;
     const startAngle = -Math.PI / 2;
 
@@ -68,21 +68,20 @@ export default function ScoreRadar({ scores }) {
 
       // Draw data
       const values = [
-        scores.wariga?.score || 0,
-        scores.numerology?.score || 0,
-        scores.astrology?.score || 0,
-        scores.jyotisha?.score || 0,
-        scores.bazi?.score || 0,
-        scores.qimen?.score || 0,
-        scores.nawaSanga?.score || 0,
-        scores.karma?.score || 0,
+        semanticData.spiritualDepth || 0,
+        semanticData.royalAura || 0,
+        semanticData.bravery || 0,
+        semanticData.intellect || 0,
+        semanticData.beauty || 0,
+        semanticData.wealth || 0,
+        semanticData.compassion || 0,
       ];
 
       ctx.beginPath();
       for (let i = 0; i <= sides; i++) {
         const idx = i % sides;
         const angle = startAngle + idx * angleStep;
-        const val = (values[idx] / 100) * maxR * progress;
+        const val = (values[idx] / 10) * maxR * progress;
         const x = cx + Math.cos(angle) * val;
         const y = cy + Math.sin(angle) * val;
         i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
@@ -96,11 +95,11 @@ export default function ScoreRadar({ scores }) {
       // Draw dots
       for (let i = 0; i < sides; i++) {
         const angle = startAngle + i * angleStep;
-        const val = (values[i] / 100) * maxR * progress;
+        const val = (values[i] / 10) * maxR * progress;
         const x = cx + Math.cos(angle) * val;
         const y = cy + Math.sin(angle) * val;
         ctx.beginPath();
-        ctx.arc(x, y, 5, 0, Math.PI * 2);
+        ctx.arc(x, y, 4, 0, Math.PI * 2);
         ctx.fillStyle = COLORS.dot;
         ctx.fill();
         ctx.strokeStyle = '#0F0D1A';
@@ -114,19 +113,21 @@ export default function ScoreRadar({ scores }) {
       ctx.textAlign = 'center';
       for (let i = 0; i < sides; i++) {
         const angle = startAngle + i * angleStep;
-        const lx = cx + Math.cos(angle) * (maxR + 42);
-        const ly = cy + Math.sin(angle) * (maxR + 42);
+        // Increase text distance from radar slightly for better breathability
+        const lx = cx + Math.cos(angle) * (maxR + 45);
+        const ly = cy + Math.sin(angle) * (maxR + 45);
         
-        const labelWords = LABELS[i].split(' ');
-        if (labelWords.length > 1) {
-          ctx.fillText(labelWords[0], lx, ly - 8);
-          ctx.fillText(labelWords.slice(1).join(' '), lx, ly + 4);
+        // Split label if it contains spaces to save horizontal room
+        const words = LABELS[i].split(' ');
+        if (words.length > 1) {
+          ctx.fillText(words[0], lx, ly - 8);
+          ctx.fillText(words[1], lx, ly + 4);
           ctx.fillStyle = COLORS.dot;
-          ctx.fillText(Math.round(values[i] * progress), lx, ly + 18);
+          ctx.fillText(Math.round(values[i] * progress) + '/10', lx, ly + 18);
         } else {
           ctx.fillText(LABELS[i], lx, ly);
           ctx.fillStyle = COLORS.dot;
-          ctx.fillText(Math.round(values[i] * progress), lx, ly + 14);
+          ctx.fillText(Math.round(values[i] * progress) + '/10', lx, ly + 14);
         }
         ctx.fillStyle = COLORS.text;
       }
@@ -142,10 +143,10 @@ export default function ScoreRadar({ scores }) {
     return () => {
       if (animRef.current) cancelAnimationFrame(animRef.current);
     };
-  }, [scores]);
+  }, [semanticData]);
 
   return (
-    <div className="score-radar">
+    <div className="score-radar" style={{ display: 'flex', justifyContent: 'center' }}>
       <canvas ref={canvasRef} />
     </div>
   );

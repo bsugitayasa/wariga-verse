@@ -62,7 +62,7 @@ export default function NameComparison({ primaryAnalysis, comparisonAnalysis, on
               </div>
             </div>
             
-            <ComparisonDetails breakdown={primary} />
+            <ComparisonDetails breakdown={primary} enrichedScores={primaryAnalysis.enrichedScores} />
           </div>
 
           {/* Comparison Name */}
@@ -75,7 +75,7 @@ export default function NameComparison({ primaryAnalysis, comparisonAnalysis, on
               </div>
             </div>
 
-            <ComparisonDetails breakdown={secondary} />
+            <ComparisonDetails breakdown={secondary} enrichedScores={comparisonAnalysis.enrichedScores} />
           </div>
         </div>
       )}
@@ -83,12 +83,15 @@ export default function NameComparison({ primaryAnalysis, comparisonAnalysis, on
   );
 }
 
-function ComparisonDetails({ breakdown }) {
+function ComparisonDetails({ breakdown, enrichedScores }) {
   const metrics = [
     { label: 'Numerologi', key: 'numerology' },
+    { label: 'Semantik & Aura', key: 'nlp' },
+    { label: 'BaZi', key: 'bazi' },
     { label: 'Wariga Bali', key: 'wariga' },
-    { label: 'Astrologi', key: 'astrology' },
     { label: 'Jyotisha', key: 'jyotisha' },
+    { label: 'Astrologi', key: 'astrology' },
+    { label: 'Qimen Dun Jia', key: 'qimen' },
     { label: 'Nawa Sanga', key: 'nawaSanga' },
   ];
 
@@ -111,12 +114,38 @@ function ComparisonDetails({ breakdown }) {
       ))}
       
       <div className="glass-card" style={{ marginTop: '1rem', padding: '1rem', background: 'rgba(124,58,237,0.05)' }}>
-        <h5 style={{ marginBottom: '0.5rem', fontSize: '0.85rem' }}>Metafisika Utama:</h5>
+        <h5 style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: 'var(--purple-light)' }}>Identitas Inti:</h5>
         <div style={{ fontSize: '0.8rem', lineHeight: '1.4' }}>
-          <strong>Destiny:</strong> {breakdown.numerology.data.destiny} ({breakdown.numerology.data.destinyInterpretation.title})<br />
-          <strong>Metaphysical Score:</strong> {breakdown.numerology.data.metaphysicalScore}
+          <strong>Destiny:</strong> {breakdown.numerology.data.destiny} ({breakdown.numerology.data.destinyInterpretation?.title || 'Unknown'})<br />
+          <strong>Master Element:</strong> {breakdown.bazi?.data?.dayMasterElement || 'Unknown'}
         </div>
       </div>
+
+      {enrichedScores && (
+        <div className="glass-card" style={{ marginTop: '1rem', padding: '1rem', background: 'rgba(245,158,11,0.05)' }}>
+          <h5 style={{ marginBottom: '0.5rem', fontSize: '0.85rem', color: 'var(--gold)' }}>Ekstensi Metafisika:</h5>
+          <div style={{ fontSize: '0.8rem', lineHeight: '1.6' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <span>Stabilitas Numerologi:</span> <strong>{enrichedScores.numerologyStability}%</strong>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <span>Spiritual Depth:</span> <strong>{enrichedScores.spiritualDepth}%</strong>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <span>Royal Aura:</span> <strong>{enrichedScores.royalAura}%</strong>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <span>Bali Authenticity:</span> <strong>{enrichedScores.baliAuthenticity}%</strong>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <span>Beban Karmik:</span> 
+              <strong style={{ color: enrichedScores.karmicLoad > 50 ? 'var(--accent-red)' : 'var(--accent-green)' }}>
+                {enrichedScores.karmicLoad}%
+              </strong>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

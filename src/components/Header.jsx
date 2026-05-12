@@ -6,7 +6,7 @@ export default function Header() {
           <div className="header__logo-icon">🕉️</div>
           <div>
             <div className="header__title text-gradient">Wariga Verse</div>
-            <div className="header__subtitle">Rekomendasi Nama Anak Hindu Bali</div>
+            <div className="header__subtitle">Rekomendasi & Analisa Nama</div>
           </div>
         </div>
         <div className="text-bali" style={{ fontSize: '1rem', color: 'var(--text-muted)' }}>
