@@ -30,7 +30,7 @@ export default function ScoreRadar({ scores }) {
 
     const cx = size / 2;
     const cy = size / 2;
-    const maxR = 140;
+    const maxR = 125; // Slightly reduced radius to give labels more room to breathe
     const sides = 8;
     const angleStep = (Math.PI * 2) / sides;
     const startAngle = -Math.PI / 2;
@@ -114,8 +114,8 @@ export default function ScoreRadar({ scores }) {
       ctx.textAlign = 'center';
       for (let i = 0; i < sides; i++) {
         const angle = startAngle + i * angleStep;
-        const lx = cx + Math.cos(angle) * (maxR + 42);
-        const ly = cy + Math.sin(angle) * (maxR + 42);
+        const lx = cx + Math.cos(angle) * (maxR + 48);
+        const ly = cy + Math.sin(angle) * (maxR + 48);
         
         const labelWords = LABELS[i].split(' ');
         if (labelWords.length > 1) {

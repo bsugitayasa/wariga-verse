@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  wariga-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wariga-verse-app
+    ports:
+      - "8080:80"
+    restart: always
+    networks:
+      - wariga-network
+
+networks:
+  wariga-network:
+    driver: bridge

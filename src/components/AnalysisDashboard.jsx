@@ -319,7 +319,7 @@ function OverviewTab({ breakdown, enrichedScores }) {
   return (
     <div className="glass-card">
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'center', marginBottom: '2rem' }}>
-        <div style={{ flex: '1 1 450px', display: 'flex', justifyContent: 'center' }}>
+        <div style={{ flex: '1 1 500px', display: 'flex', justifyContent: 'center', minHeight: '400px' }}>
           <ScoreRadar scores={breakdown} />
         </div>
         <div style={{ flex: '1 1 250px', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -738,7 +738,7 @@ function NumerologyTab({ data, isSelf }) {
               <p>
                 <strong>Karmic Debts (Hutang Karmik):</strong><br />
                 {num.karmicDebts?.length > 0 ? (
-                  <span style={{ color: 'var(--accent-orange)' }}>Terdeteksi angka: {num.karmicDebts.join(', ')}</span>
+                  <span style={{ color: 'var(--accent-orange)' }}>Terdeteksi angka: {num.karmicDebts.map(d => d.number).join(', ')}</span>
                 ) : (
                   <span style={{ color: 'var(--accent-green)' }}>Tidak terdeteksi hutang karmik.</span>
                 )}
