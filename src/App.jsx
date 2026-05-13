@@ -49,7 +49,7 @@ export default function App() {
           childName, formData.child.birthDate,
           formData.child.gender
         );
-        
+
         result.timestamp = Date.now();
 
         let names = [];
@@ -82,7 +82,7 @@ export default function App() {
       return;
     }
     if (!lastFormData) return;
-    
+
     try {
       const compResult = runFullAnalysis(
         lastFormData.father.name, lastFormData.father.birthDate,
@@ -130,10 +130,10 @@ export default function App() {
 
               {/* Name Comparison Section */}
               <section style={{ marginBottom: '2rem' }}>
-                <NameComparison 
-                  primaryAnalysis={analysis} 
-                  comparisonAnalysis={comparison} 
-                  onCompare={handleCompare} 
+                <NameComparison
+                  primaryAnalysis={analysis}
+                  comparisonAnalysis={comparison}
+                  onCompare={handleCompare}
                 />
               </section>
 
@@ -155,12 +155,12 @@ export default function App() {
 
       {/* Footer */}
       <footer className="footer container" style={{ marginTop: '4rem', paddingBottom: '2rem', textAlign: 'center' }}>
-        <p className="text-muted" style={{ fontSize: '0.85rem' }}>Wariga Verse — Rekomendasi Nama & Analisis Metafisika</p>
+        <p className="text-muted" style={{ fontSize: '0.85rem' }}>&copy; {new Date().getFullYear()} Wariga Verse — Rekomendasi Nama & Analisis Metafisika</p>
         <p style={{ marginTop: '0.5rem' }}>
           <span className="text-bali" style={{ fontSize: '1.2rem', color: 'var(--gold)' }}>ᬒᬁ ᬰᬵᬦ᭄ᬢᬶᬄ ᬰᬵᬦ᭄ᬢᬶᬄ ᬰᬵᬦ᭄ᬢᬶᬄ</span>
         </p>
         <p style={{ marginTop: '1rem', fontSize: '0.7rem', color: 'var(--text-muted)', maxWidth: '600px', margin: '1rem auto' }}>
-          Aplikasi ini bersifat referensi. Selalu konsultasikan dengan ahli Wariga atau pemangku untuk keputusan penting terkait nama dan ritual.
+          Aplikasi ini bersifat referensi. Selalu konsultasikan dengan ahli Wariga atau praktisi spiritual untuk keputusan penting terkait nama dan ritual.
         </p>
       </footer>
     </div>
