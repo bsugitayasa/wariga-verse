@@ -19,7 +19,7 @@ export default function ScoreRadar({ scores }) {
     if (!canvas || !scores) return;
     const ctx = canvas.getContext('2d');
     const dpr = window.devicePixelRatio || 1;
-    const size = 500; // Increased to prevent clipping
+    const size = 600; 
     canvas.width = size * dpr;
     canvas.height = size * dpr;
     canvas.style.width = '100%';
@@ -30,7 +30,7 @@ export default function ScoreRadar({ scores }) {
 
     const cx = size / 2;
     const cy = size / 2;
-    const maxR = 125; // Slightly reduced radius to give labels more room to breathe
+    const maxR = 200; // Significantly enlarged radar object
     const sides = 8;
     const angleStep = (Math.PI * 2) / sides;
     const startAngle = -Math.PI / 2;
@@ -109,7 +109,7 @@ export default function ScoreRadar({ scores }) {
       }
 
       // Draw labels
-      ctx.font = '10px Inter, sans-serif';
+      ctx.font = '700 13px Inter, sans-serif'; // Increased size and added bold weight
       ctx.fillStyle = COLORS.text;
       ctx.textAlign = 'center';
       for (let i = 0; i < sides; i++) {
