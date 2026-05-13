@@ -2,33 +2,18 @@
 
 /* ===== CSS DESIGN SYSTEM ===== */
 :root {
-  /* Colors */
+  /* Constant Colors (Shared) */
   --gold: #F59E0B;
   --gold-light: #FCD34D;
   --gold-dark: #D97706;
   --purple: #7C3AED;
   --purple-light: #A78BFA;
   --purple-dark: #5B21B6;
-  --bg-primary: #0F0D1A;
-  --bg-secondary: #1A1625;
-  --bg-card: rgba(26, 22, 37, 0.7);
-  --bg-glass: rgba(255, 255, 255, 0.04);
-  --border-glass: rgba(255, 255, 255, 0.08);
-  --text-primary: #F1F0F5;
-  --text-secondary: #A09BB0;
-  --text-muted: #6B6580;
   --accent-red: #EF4444;
   --accent-green: #22C55E;
   --accent-blue: #3B82F6;
   --accent-orange: #F97316;
   --accent-cyan: #06B6D4;
-
-  /* Gradients */
-  --gradient-gold: linear-gradient(135deg, #F59E0B, #D97706);
-  --gradient-purple: linear-gradient(135deg, #7C3AED, #5B21B6);
-  --gradient-hero: linear-gradient(135deg, #0F0D1A 0%, #1A1040 50%, #0F0D1A 100%);
-  --gradient-card: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(245, 158, 11, 0.05));
-  --gradient-glow: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
 
   /* Typography */
   --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -51,17 +36,60 @@
   --radius-xl: 24px;
   --radius-full: 9999px;
 
-  /* Shadows */
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+}
+
+/* Default Dark Theme */
+:root, [data-theme="dark"] {
+  --bg-primary: #0F0D1A;
+  --bg-secondary: #1A1625;
+  --bg-card: rgba(26, 22, 37, 0.7);
+  --bg-glass: rgba(255, 255, 255, 0.04);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --text-primary: #F1F0F5;
+  --text-secondary: #A09BB0;
+  --text-muted: #6B6580;
+
+  --gradient-hero: linear-gradient(135deg, #0F0D1A 0%, #1A1040 50%, #0F0D1A 100%);
+  --gradient-card: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(245, 158, 11, 0.05));
+  --gradient-glow: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+  
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
   --shadow-glow-gold: 0 0 20px rgba(245, 158, 11, 0.3);
   --shadow-glow-purple: 0 0 20px rgba(124, 58, 237, 0.3);
+}
 
-  /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 250ms ease;
-  --transition-slow: 400ms ease;
+/* Premium Parchment Light Theme */
+[data-theme="light"] {
+  --bg-primary: #FCFAEF;
+  --bg-secondary: #F5F2E0;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --bg-glass: rgba(0, 0, 0, 0.03);
+  --border-glass: rgba(44, 38, 26, 0.1);
+  --text-primary: #2C261A;
+  --text-secondary: #5E533D;
+  --text-muted: #8F846B;
+
+  --gradient-hero: linear-gradient(135deg, #FCFAEF 0%, #F5F2E0 100%);
+  --gradient-card: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(245, 158, 11, 0.1));
+  --gradient-glow: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+
+  --shadow-sm: 0 2px 8px rgba(44, 38, 26, 0.1);
+  --shadow-md: 0 4px 16px rgba(44, 38, 26, 0.15);
+  --shadow-lg: 0 8px 32px rgba(44, 38, 26, 0.2);
+  --shadow-glow-gold: 0 0 20px rgba(245, 158, 11, 0.15);
+  --shadow-glow-purple: 0 0 20px rgba(124, 58, 237, 0.1);
+}
+
+/* Gradients (Constants but using theme vars) */
+:root {
+  --gradient-gold: linear-gradient(135deg, #F59E0B, #D97706);
+  --gradient-purple: linear-gradient(135deg, #7C3AED, #5B21B6);
 }
 
 /* ===== RESET & BASE ===== */
@@ -462,15 +490,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   gap: var(--space-sm);
 }
 
-.header__logo-icon {
-  width: 40px;
-  height: 40px;
-  background: var(--gradient-gold);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
+.header__logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.4));
+  transition: transform var(--transition-base);
+}
+
+.header__logo:hover .header__logo-img {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .header__title {
@@ -484,6 +513,33 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  color: var(--gold);
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.theme-toggle:hover {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: var(--gold);
+  transform: translateY(-2px) rotate(10deg);
+  box-shadow: var(--shadow-glow-gold);
+}
+
+.theme-toggle:active {
+  transform: scale(0.9);
 }
 
 /* Hero */
