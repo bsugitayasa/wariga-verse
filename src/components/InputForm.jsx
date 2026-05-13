@@ -4,9 +4,9 @@ import { calculatePawukon } from '../engines/pawukonEngine';
 export default function InputForm({ onSubmit }) {
   const [mode, setMode] = useState('child'); // 'child' or 'self'
   const [formData, setFormData] = useState({
-    father: { name: 'Ida Bagus Gede Githa Yasha', birthDate: '1987-05-07', birthTime: '02:00' },
-    mother: { name: 'Ida Ayu Arni Maheswari', birthDate: '1991-09-10', birthTime: '04:14' },
-    child: { name: '', birthDate: '', birthTime: '12:00', gender: 'male', birthOrder: '1', birthOrderName: 'Putu' }
+    father: { name: '', birthDate: '', birthTime: '00:00' },
+    mother: { name: '', birthDate: '', birthTime: '00:00' },
+    child: { name: '', birthDate: '', birthTime: '00:00', gender: 'male', birthOrder: '1', birthOrderName: 'Putu' }
   });
 
   const birthOrderNames = {
@@ -30,24 +30,24 @@ export default function InputForm({ onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const childDate = combineDateTime(formData.child.birthDate, formData.child.birthTime);
-    
+
     const submissionData = {
       isSelfAnalysis: mode === 'self',
-      father: mode === 'self' ? { name: '', birthDate: null } : { 
-        name: formData.father.name, 
-        birthDate: combineDateTime(formData.father.birthDate, formData.father.birthTime) 
+      father: mode === 'self' ? { name: '', birthDate: null } : {
+        name: formData.father.name,
+        birthDate: combineDateTime(formData.father.birthDate, formData.father.birthTime)
       },
-      mother: mode === 'self' ? { name: '', birthDate: null } : { 
-        name: formData.mother.name, 
-        birthDate: combineDateTime(formData.mother.birthDate, formData.mother.birthTime) 
+      mother: mode === 'self' ? { name: '', birthDate: null } : {
+        name: formData.mother.name,
+        birthDate: combineDateTime(formData.mother.birthDate, formData.mother.birthTime)
       },
-      child: { 
-        ...formData.child, 
+      child: {
+        ...formData.child,
         name: formData.child.name || (mode === 'self' ? 'Saya' : 'Anak'),
-        birthDate: childDate 
+        birthDate: childDate
       }
     };
-    
+
     onSubmit(submissionData);
   };
 
@@ -82,7 +82,7 @@ export default function InputForm({ onSubmit }) {
     else setChildOtonan(null);
   }, [formData.child.birthDate, formData.child.birthTime]);
 
-  const isValid = mode === 'self' 
+  const isValid = mode === 'self'
     ? (formData.child.name && formData.child.birthDate)
     : (formData.father.name && formData.father.birthDate && formData.mother.name && formData.mother.birthDate && formData.child.birthDate);
 
@@ -109,9 +109,9 @@ export default function InputForm({ onSubmit }) {
   return (
     <form className="input-form" onSubmit={handleSubmit} id="input-form" style={{ display: 'grid', gap: '2rem' }}>
       {/* Mode Switcher */}
-      <div style={{ 
-        display: 'flex', gap: '10px', padding: '4px', background: 'rgba(255,255,255,0.05)', 
-        borderRadius: '16px', gridColumn: '1 / -1', maxWidth: '500px', margin: '0 auto' 
+      <div style={{
+        display: 'flex', gap: '10px', padding: '4px', background: 'rgba(255,255,255,0.05)',
+        borderRadius: '16px', gridColumn: '1 / -1', maxWidth: '500px', margin: '0 auto'
       }}>
         <button type="button" onClick={() => setMode('child')} style={{
           flex: 1, padding: '0.8rem 1.5rem', borderRadius: '12px', border: 'none', cursor: 'pointer',
@@ -189,7 +189,7 @@ export default function InputForm({ onSubmit }) {
         )}
 
         {/* Child / Self */}
-        <div className="glass-card input-form__section animate-fade-in-up" style={{ 
+        <div className="glass-card input-form__section animate-fade-in-up" style={{
           background: 'rgba(245,158,11,0.02)',
           gridColumn: mode === 'self' ? '1 / span 2' : 'auto',
           maxWidth: mode === 'self' ? '500px' : 'none',
@@ -205,7 +205,7 @@ export default function InputForm({ onSubmit }) {
               <input className="form-input" type="text" placeholder={mode === 'child' ? 'Kosongkan untuk rekomendasi' : 'Ketik nama Anda'}
                 value={formData.child.name} onChange={e => handleChildChange('name', e.target.value)} />
             </div>
-            
+
             <div className="form-group">
               <label className="form-label">Gender</label>
               <div className="gender-selector">
