@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Balinese&display=swap');
-
 /* ===== CSS DESIGN SYSTEM ===== */
 :root {
   /* Constant Colors (Shared) */
@@ -1608,6 +1606,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   display: flex;
   justify-content: center;
   padding: var(--space-sm) 0;
+}
+
+.ad-slot--header-banner,
+.ad-slot--footer-banner {
+  min-height: 106px;
+}
+
+@media (max-width: 768px) {
+  .ad-slot--header-banner,
+  .ad-slot--footer-banner {
+    min-height: 66px;
+  }
+}
+
+.ad-slot--in-content {
+  min-height: 266px;
 }
 
 .ad-slot__inner {
