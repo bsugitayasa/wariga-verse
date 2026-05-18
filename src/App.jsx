@@ -1,10 +1,11 @@
-import { useState, useRef, useCallback, useEffect } from 'react';
-import Header from './components/Header';
+import { useState, useRef, useCallback } from 'react';
 import InputForm from './components/InputForm';
 import AnalysisDashboard from './components/AnalysisDashboard';
 import NameRecommendation from './components/NameRecommendation';
 import NameComparison from './components/NameComparison';
 import LifePatternTimeline from './components/LifePatternTimeline';
+import SEOHead from './components/SEOHead';
+import AdSlot from './components/AdSlot';
 import { runFullAnalysis, recommendNames } from './engines/scoreAggregator';
 
 export default function App() {
@@ -13,24 +14,7 @@ export default function App() {
   const [recommendations, setRecommendations] = useState([]);
   const [loading, setLoading] = useState(false);
   const [lastFormData, setLastFormData] = useState(null);
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
   const resultsRef = useRef(null);
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
-  };
-
-  useEffect(() => {
-    // Redirection if user accesses something like /bazi directly
-    if (window.location.pathname !== '/') {
-      window.history.replaceState(null, '', '/');
-    }
-  }, []);
 
   const handleSubmit = useCallback((formData) => {
     setAnalysis(null);
@@ -99,7 +83,14 @@ export default function App() {
 
   return (
     <div className="app">
-      <Header theme={theme} onToggleTheme={toggleTheme} />
+      <SEOHead
+        title="Analisis Nama"
+        description="Mulai analisis metafisika nama Anda. Masukkan data kelahiran untuk mendapatkan rekomendasi nama berdasarkan Wariga Bali, Numerologi, dan Astrologi."
+        path="/app"
+      />
+
+      {/* Header Ad Slot */}
+      <AdSlot position="header-banner" />
 
       <main className="container" style={{ padding: '2rem 1rem' }}>
         {/* Input Form Section */}
@@ -128,6 +119,9 @@ export default function App() {
                 <AnalysisDashboard key={analysis.timestamp} analysis={analysis} />
               </section>
 
+              {/* In-Content Ad Slot */}
+              <AdSlot position="in-content" />
+
               {/* Name Comparison Section */}
               <section style={{ marginBottom: '2rem' }}>
                 <NameComparison
@@ -153,16 +147,8 @@ export default function App() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="footer container" style={{ marginTop: '4rem', paddingBottom: '2rem', textAlign: 'center' }}>
-        <p className="text-muted" style={{ fontSize: '0.85rem' }}>&copy; {new Date().getFullYear()} Wariga Verse — Rekomendasi Nama & Analisis Metafisika</p>
-        <p style={{ marginTop: '0.5rem' }}>
-          <span className="text-bali" style={{ fontSize: '1.2rem', color: 'var(--gold)' }}>ᬒᬁ ᬰᬵᬦ᭄ᬢᬶᬄ ᬰᬵᬦ᭄ᬢᬶᬄ ᬰᬵᬦ᭄ᬢᬶᬄ</span>
-        </p>
-        <p style={{ marginTop: '1rem', fontSize: '0.7rem', color: 'var(--text-muted)', maxWidth: '600px', margin: '1rem auto' }}>
-          Aplikasi ini bersifat referensi. Selalu konsultasikan dengan ahli Wariga atau praktisi spiritual untuk keputusan penting terkait nama dan ritual.
-        </p>
-      </footer>
+      {/* Footer Ad Slot */}
+      <AdSlot position="footer-banner" />
     </div>
   );
 }
